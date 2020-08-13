@@ -1,6 +1,6 @@
 const { Product } = require("../models/Product");
 const multer = require('multer');
-const { request } = require("express");
+const { auth } = require("../middleware/auth");
 
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {

@@ -11,9 +11,9 @@ router.post("/uploadImage", auth,ImageUpload);
 
 router.post("/uploadProduct", auth, ProductUpload);
 
-router.post("/getProducts", auth,  ProductGet);
+router.post("/getProducts",  ProductGet);
 
-router.get("/products_by_id",auth, ProductById);
+router.get("/products_by_id", ProductById);
 
 
 module.exports = router;
