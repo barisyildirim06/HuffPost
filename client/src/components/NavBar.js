@@ -43,6 +43,9 @@ function Navbar(props) {
                     :
                     <ul className="nav-links">
                         <li>
+                            <Link to="/uploadpost">Upload Post</Link>
+                        </li>
+                        <li>
                             <Link onClick={logoutHandler}>Logout</Link>
                         </li>
                     </ul>}
@@ -65,7 +68,7 @@ function Navbar(props) {
                 <hr className="hide" />
                 <ul className="nav-links">
                     <li>
-                        <Link to="/">NEWS</Link>
+                        <Link to="/news">NEWS</Link>
                     </li>
                     <li>
                         <Link to="/">CORONAVIRUS</Link>
