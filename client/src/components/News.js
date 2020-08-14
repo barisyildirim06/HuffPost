@@ -74,11 +74,15 @@ function News() {
                         categories={categories}
                     />
                 </div>
+                <br />
+                <br />
                 {PostSize >= Limit &&
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <button onClick={onLoadMore}>Load More Articles</button>
+                    <button className="load-more-button load-more-button-border" onClick={onLoadMore}><b>Load More Articles</b></button>
                 </div>
-            }
+                 }
+                <br />
+                <br />
             </div>
         </div>
     )
