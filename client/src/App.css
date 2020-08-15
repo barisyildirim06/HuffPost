@@ -340,7 +340,7 @@
     letter-spacing: 0px;
   }
   .footer-links a:hover {
-    color: #008000;
+    color:#0cbd8c;
     text-decoration:none;
   }
   .footer-sublinks {
@@ -361,7 +361,7 @@
     letter-spacing: 0px;
   }
   .footer-sublinks a:hover {
-    color: green;
+    color:#076e58;
     text-decoration:none;
   }
   .footer-logo { 
@@ -428,12 +428,11 @@
     transition: var(--mainTransition);
     text-decoration:underline;
     text-decoration-color: black;
-  
   }
   .firstnew-links a:hover {
     color: black;
     text-decoration:underline;
-    text-decoration-color: green;
+    text-decoration-color:#0dbe98;
   
   }
   /* end of first new */
@@ -630,9 +629,6 @@
   }
   /* whatshappening end */
   /* Featured start */
-  .featuredbox{
-    margin-bottom: 10px;
-  }
   .featured{
     column-gap: 30px;
     column-count: 2;

@@ -74,7 +74,7 @@ function Navbar(props) {
                         <Link to="/">CORONAVIRUS</Link>
                     </li>
                     <li>
-                        <Link to="/">POLITICS</Link>
+                        <Link to="/news/politics">POLITICS</Link>
                     </li>
                     <li>
                         <Link to="/">2020 ELECTIONS</Link>
