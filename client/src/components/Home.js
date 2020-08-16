@@ -35,7 +35,7 @@ function Home() {
     }, [])
 
     const FilteredCoronaVırus = Products.slice(11,100).filter(product=>{
-        if (product.categories == 2){
+        if (product.categories == 1){
             return  product
         }
     })
