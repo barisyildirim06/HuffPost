@@ -6,20 +6,20 @@ import Title from './Title'
 function Politics() {
 
     const categories = [
-        { _id: 1, name: "U.S. NEWS" },
-        { _id: 2, name: "CORONAVIRUS" },
-        { _id: 3, name: "POLITICS" },
-        { _id: 4, name: "ENTERTAINMENT" },
-        { _id: 5, name: "WORLD NEWS" },
-        { _id: 6, name: "LIFE" },
-        { _id: 7, name: "SHOPIPING" }
+        { _id: 0, name: "U.S. NEWS" },
+        { _id: 1, name: "CORONAVIRUS" },
+        { _id: 2, name: "POLITICS" },
+        { _id: 3, name: "ENTERTAINMENT" },
+        { _id: 4, name: "WORLD NEWS" },
+        { _id: 5, name: "LIFE" },
+        { _id: 6, name: "SHOPIPING" }
     ]
     const X = 0;
     const Y = 6;
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
     const [PostSize, setPostSize] = useState()
-    const filters=({"categories" : 3})
+    const filters=({"categories" : 2})
     const Limit = 10
 
     useEffect(() => {

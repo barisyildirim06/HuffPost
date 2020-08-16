@@ -7,7 +7,7 @@ function RenderProducts(props) {
     const Products = props.Products;
     return (Products.slice(X,Y).map((product) => {
         return <div >
-             <h1 className="firstnew-links"><Link to="/">{product.title.toUpperCase()}</Link></h1>
+             <h1 className="firstnew-links"><Link to={`/product/${product._id}`}>{product.title.toUpperCase()}</Link></h1>
            <Link to={`/product/${product._id}`}><img className="img-container" src={product.imageshorizontal} alt={product.imageshorizontal }/></Link> 
                 <br />
                 <br />
