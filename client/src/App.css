@@ -629,7 +629,11 @@
   }
   /* whatshappening end */
   /* Featured start */
+  .featuredbox{
+    padding: 10px;
+  }
   .featured{
+    height: fit-content;
     column-gap: 30px;
     column-count: 2;
   }

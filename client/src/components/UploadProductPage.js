@@ -7,13 +7,13 @@ import Axios from 'axios';
 const {Title} =Typography;
 const {TextArea} = Input
 const Categories = [
-    {key:1, value: "U.S. NEWS"},
-    {key:2, value:"CORONAVIRUS"},
-    {key:3, value:"POLITICS"},
-    {key:4, value:"ENTERTAINMENT"},
-    {key:5, value:"WORLD NEWS"},
-    {key:6, value:"LIFE"},
-    {key:7, value:"SHOPIPING"}
+    {key:0, value: "U.S. NEWS"},
+    {key:1, value:"CORONAVIRUS"},
+    {key:2, value:"POLITICS"},
+    {key:3, value:"ENTERTAINMENT"},
+    {key:4, value:"WORLD NEWS"},
+    {key:5, value:"LIFE"},
+    {key:6, value:"SHOPIPING"}
 ]
 
 function UploadProductPage(props) {
