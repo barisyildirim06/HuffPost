@@ -103,6 +103,8 @@ function Home() {
                             categories={categories}
                         />
                     </div>
+                    <br/>
+                <br/>
 
                 </div>
                 <div className="column right col-4 col-s-12 right1 ">
@@ -118,11 +120,15 @@ function Home() {
                 </div>
             </div>
             <div >
+                
                 <RenderItsPersonal />
             </div>
             <div className="container">
                 <div className="column col-8 col-s-12 left1 img-full">
                     <div >
+                        <br/>
+                        <br/>
+                        <hr/>
                         <RenderPersonalNews
                             X={11}
                             Y={21}
