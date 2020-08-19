@@ -13,7 +13,9 @@ const Categories = [
     {key:3, value:"ENTERTAINMENT"},
     {key:4, value:"WORLD NEWS"},
     {key:5, value:"LIFE"},
-    {key:6, value:"SHOPIPING"}
+    {key:6, value:"SHOPIPING"},
+    {key:7, value:"IMPACT"},
+    {key:8, value:"COMMUNITIES"},
 ]
 
 function UploadProductPage(props) {

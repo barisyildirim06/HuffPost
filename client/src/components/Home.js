@@ -8,6 +8,7 @@ import RenderItsPersonal from './utils/RenderItsPersonal'
 import RenderBottomPart from './utils/RenderBottomPart'
 import RenderWhatsHappening from './utils/RenderWhatsHappening'
 import RenderPersonalNews from './utils/RenderPersonalNews'
+import RenderLife from './utils/RenderLife'
 import Title from './Title'
 
 
@@ -79,6 +80,7 @@ function Home() {
                             categories={categories}
                         />
                     </div>
+                    <hr/>
                 </div>
                 <div className="column right col-4 col-s-12 right1">
                     <h4><Title title="CORONAVIRUS" /></h4>
@@ -91,7 +93,7 @@ function Home() {
                     />
                 </div>
                 <div className="column col-8 col-s-12 left1">
-                    <hr /><br /><br /><br />
+                    <br /><br /><br />
                     <h4><Title title="FEATURED" /></h4>
                     <div className="featured img-full">
                         <RenderFeatured
@@ -111,6 +113,45 @@ function Home() {
                         />
                     </div>
                     <br/>
+                    <hr/>
+                    <h4 className="montserrat"><b>LIFE</b></h4>
+                    <div className="lifebox">
+                    <div className="lifebox2 img-full">
+                        <RenderLife
+                            X={11}
+                            Y={12}
+                            Products={Products}
+                            categories={categories}
+                        />
+                        </div>
+                        <div className="padding30px"/>
+                        <div className="lifebox2 img-full">
+                        <RenderLife
+                            X={12}
+                            Y={13}
+                            Products={Products}
+                            categories={categories}
+                        />
+                        </div>
+                        
+                        <div className="lifebox2 img-full">
+                        <RenderLife
+                            X={13}
+                            Y={14}
+                            Products={Products}
+                            categories={categories}
+                        />
+                        </div>
+                        <div className="padding30px"/>
+                        <div className="lifebox2 img-full">
+                        <RenderLife
+                            X={14}
+                            Y={15}
+                            Products={Products}
+                            categories={categories}
+                        />
+                        </div>
+                    </div>
                 <br/>
 
                 </div>
@@ -143,31 +184,46 @@ function Home() {
                             categories={categories}
                         />
                     </div>
-                    <br/>
-                    <br/>
-                    <h4><Title title="POLITICS" /></h4>
-                    <br/>
+                    <h4 className="bottompartbox"><Title title="POLITICS" /></h4>
                     <div className="bottompart img-full">
                         <RenderBottomPart
-                            Products={FilteredPolitics}
+                            Products={Products}
                             X={0}
                             Y={4}
                             categories={categories}
                         />
                     </div>
                     <hr/>
-                    <br/>
-                    <br/>
-                    <h4><Title title="POLITICS" /></h4>
-                    <br/>
+                    <h4 className="bottompartbox"><Title title="ENTERTAINMENT" /></h4>
                     <div className="bottompart img-full">
                         <RenderBottomPart
-                            Products={FilteredPolitics}
-                            X={0}
-                            Y={4}
+                            Products={Products}
+                            X={4}
+                            Y={8}
                             categories={categories}
                         />
                     </div>
+                    <hr/>
+                    <h4 className="bottompartbox"><Title title="LIFE" /></h4>
+                    <div className="bottompart img-full">
+                        <RenderBottomPart
+                            Products={Products}
+                            X={8}
+                            Y={12}
+                            categories={categories}
+                        />
+                    </div>
+                    <hr/>
+                    <h4 className="bottompartbox"><Title title="shoping" /></h4>
+                    <div className="bottompart img-full">
+                        <RenderBottomPart
+                            Products={Products}
+                            X={12}
+                            Y={16}
+                            categories={categories}
+                        />
+                    </div>
+                    
                 </div>
             </div>
             

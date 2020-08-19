@@ -11,12 +11,20 @@
     --mainBlack: black;
     --mainGrey: #ecececad;
     --darkGrey: #cfcfcf;
-    --mainTransition: all 0.3s linear;
+    --mainTransition: all 0s linear;
     --mainSpacing: 3px;
     --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
     --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   }
   /* globals */
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  a:hover{
+    text-decoration: underline;
+    color: black;
+  }
   body {
     padding-top: 100px;
     text-align: center;
@@ -552,17 +560,7 @@
     font-family: sans-serif;
     color: black;
   }
-  .latestnewsheader a {
-    text-decoration: none;
-    color: var(--mainBlack);
-    transition: var(--mainTransition);
-    
-  
-  }
-  .latestnewsheader a:hover {
-    color: var(--mainBlack);
-    text-decoration:underline;
-  }
+
   /* LatestNews end */
   /* /news/  start*/
   .news-img{
@@ -584,17 +582,7 @@
     font-size: 1.2rem;
     padding-left:20px;
   }
-  .news-text a {
-    text-decoration: none;
-    color: var(--mainBlack);
-    transition: var(--mainTransition);
-    
-  
-  }
-  .news-text a:hover {
-    color: var(--mainBlack);
-    text-decoration:underline;
-  }
+
   .newsbox{
     padding-top: 20px;
     padding-bottom: 120px;
@@ -605,7 +593,7 @@
 
   /* whatshappening start */
   .whatshappeningbox{
-    padding-top: 20px;
+    margin-top: 20px;
     padding-bottom: 100px;
     max-height: 100px;
     margin-bottom: 10px;
@@ -625,17 +613,7 @@
     font-size: 0.9rem;
       
   }
-  .right-text a {
-    text-decoration: none;
-    color: var(--mainBlack);
-    transition: var(--mainTransition);
-    
-  
-  }
-  .right-text a:hover {
-    color: var(--mainBlack);
-    text-decoration:underline;
-  }
+
   /* whatshappening end */
   /* Featured start */
   .featuredbox{
@@ -645,16 +623,9 @@
     height: fit-content;
     column-gap: 30px;
     column-count: 2;
+    margin-bottom: 20px;
   }
-  .featuredtext a {
-    text-decoration: none;
-    color: var(--mainBlack);
-    transition: var(--mainTransition);
-  }
-  .featuredtext a:hover {
-    color: var(--mainBlack);
-    text-decoration:underline;
-  }
+
   h3.featuredtext {
     padding-top: 12px;
     padding-left: 20px;
@@ -724,7 +695,7 @@
     text-align: left;
   }
   .personalcategory{
-    font-family: sans-serif;
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
@@ -737,6 +708,7 @@
     color: #333333;;
     transition: var(--mainTransition);
   }
+
   .personalheader {
     font-size: 28px;
     line-height: 30px;
@@ -745,14 +717,6 @@
     font-style: normal;
     font-family: sans-serif;
     margin-bottom: 5px;
-  }
-  .personalheader a{
-    text-decoration: none;
-    color: black;
-  }
-  .personalheader a:hover{
-    text-decoration: underline;
-    color: black;
   }
   .personalmain{
     color: black;
@@ -764,7 +728,12 @@
   }
   /* Its personal end */
   /* Landing page bottom 4 image part start*/
+  .bottompartbox{
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
   .bottompart{
+    margin-bottom: 10px;
     column-count: 4;
     column-gap: 40px;
     text-align: left;
@@ -779,12 +748,66 @@
     font-style: normal;
     font-family: sans-serif;
   }
-  .bottompartheader a{
-    text-decoration: none;
-    color: black;
-  }
-  .bottompartheader a:hover{
-    text-decoration: underline;
-    color: black;
-  }
   /* Landing page bottom 4 image part end*/
+
+  /* Life start */
+  .montserrat{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 24px;
+    color: #171d67;
+    text-shadow: 2px 2px #f711c0;
+    padding-top: 60px;
+  }
+  .lifebox{
+    column-count: 2;
+    column-gap: 30px;
+  }
+  .lifebox2{
+    height: 420px;
+    background-color: #e7fcff;
+  }
+  .lifeheader{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: black;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 18px;
+  }
+  .lifemain{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: black;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .lifecategory{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    color: #0d0eca;
+    padding-top: 15px;
+    letter-spacing: 1.2px;
+  }
+  .lifecategory a{
+    text-decoration: none;
+    color: #0d0eca;;
+    transition: var(--mainTransition);
+  }
+  .padding30px{
+    padding-bottom: 30px;
+
+  }
+
+  /* Life End */

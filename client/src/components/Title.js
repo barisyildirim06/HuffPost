@@ -6,7 +6,7 @@ export default class Title extends Component {
         return (
             <div >
                     <span style={{ color: "blue" }}>/ </span>
-                            {title}
+                            {title.toUpperCase()}
                             <span style={{ color: "blue" }}> /</span>
             </div>
         )
