@@ -11,9 +11,8 @@ function RenderProducts(props) {
     return (Products.slice(X,Y).map((product) => {
         return <div >
            <Link to={`/product/${product._id}`}><img src={product.imageshorizontal} alt={product.imageshorizontal }/></Link> 
-                        <b className="latestnews-text"><Link to={`/news/${categories[product.categories].name.toLowerCase()}`}>{categories[product.categories].name}</Link></b>
-                        <br />
-                        <h6 className="latestnews-text"><b><Link to={`/product/${product._id}`}>{product.title}</Link> </b></h6>
+                        <div className="personalcategory"><Link to={`/news/${categories[product.categories].name.toLowerCase()}`}>{categories[product.categories].name}</Link></div>
+                        <div className="latestnewsheader"><Link to={`/product/${product._id}`}>{product.title}</Link></div>
         </div>
     }))
     

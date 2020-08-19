@@ -8,7 +8,8 @@ function RenderFeatured(props) {
     const Products = props.Products;
     return (Products.slice(X, Y).map((product) => {
         return <div >
-            <h5 className="coronavirus-links"><Link to={`/product/${product._id}`}> {product.title}</Link></h5>
+            <div className="coronavirus-links"><Link to={`/product/${product._id}`}> {product.title}</Link></div>
+            <br/>
             <hr />
             <br />
         </div>
