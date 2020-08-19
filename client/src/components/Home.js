@@ -5,6 +5,7 @@ import RenderFeatured from './utils/RenderFeatured'
 import RenderFirstPost from './utils/RenderFirstPost'
 import RenderCoronaVırus from './utils/RenderCoronaVırus'
 import RenderItsPersonal from './utils/RenderItsPersonal'
+import RenderBottomPart from './utils/RenderBottomPart'
 import RenderWhatsHappening from './utils/RenderWhatsHappening'
 import RenderPersonalNews from './utils/RenderPersonalNews'
 import Title from './Title'
@@ -42,6 +43,12 @@ function Home() {
         }
     })
 
+    const FilteredPolitics = Products.slice(11, 100).filter(product => {
+        if (product.categories == 2) {
+            return product
+        }
+    })
+
 
 
     return (
@@ -74,7 +81,7 @@ function Home() {
                     </div>
                 </div>
                 <div className="column right col-4 col-s-12 right1">
-                    <h6><Title title="CORONAVIRUS" /></h6>
+                    <h4><Title title="CORONAVIRUS" /></h4>
                     <br/>
                     <RenderCoronaVırus
                         Products={FilteredCoronaVırus}
@@ -136,8 +143,34 @@ function Home() {
                             categories={categories}
                         />
                     </div>
+                    <br/>
+                    <br/>
+                    <h4><Title title="POLITICS" /></h4>
+                    <br/>
+                    <div className="bottompart img-full">
+                        <RenderBottomPart
+                            Products={FilteredPolitics}
+                            X={0}
+                            Y={4}
+                            categories={categories}
+                        />
+                    </div>
+                    <hr/>
+                    <br/>
+                    <br/>
+                    <h4><Title title="POLITICS" /></h4>
+                    <br/>
+                    <div className="bottompart img-full">
+                        <RenderBottomPart
+                            Products={FilteredPolitics}
+                            X={0}
+                            Y={4}
+                            categories={categories}
+                        />
+                    </div>
                 </div>
             </div>
+            
 
         </div>
 

@@ -73,7 +73,7 @@ function Politics() {
 
         <div className="container">
             <div className="column col-8 col-s-12 left1">
-                <h4><Title title="LATEST NEWS" /></h4>
+                <h4><Title title="POLITICS" /></h4>
                 <div >
                     <RenderNews
                         Products={Products}

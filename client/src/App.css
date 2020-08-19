@@ -763,3 +763,28 @@
     font-family: sans-serif;
   }
   /* Its personal end */
+  /* Landing page bottom 4 image part start*/
+  .bottompart{
+    column-count: 4;
+    column-gap: 40px;
+    text-align: left;
+    float: left;
+    padding-bottom: 20px;
+  }
+  .bottompartheader{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: black;
+    font-style: normal;
+    font-family: sans-serif;
+  }
+  .bottompartheader a{
+    text-decoration: none;
+    color: black;
+  }
+  .bottompartheader a:hover{
+    text-decoration: underline;
+    color: black;
+  }
+  /* Landing page bottom 4 image part end*/
