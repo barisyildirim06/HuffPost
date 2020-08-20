@@ -10,7 +10,7 @@ import RenderWhatsHappening from './utils/RenderWhatsHappening'
 import RenderPersonalNews from './utils/RenderPersonalNews'
 import RenderLife from './utils/RenderLife'
 import Title from './Title'
-
+import { useMediaQuery } from 'react-responsive'
 
 function Home() {
     const categories = [
@@ -25,8 +25,9 @@ function Home() {
     const X = 0;
     const Y = 6;
     const [Products, setProducts] = useState([])
-
-
+    const isBigEnough = useMediaQuery({
+        query: '(min-width: 780px)'
+      })
     useEffect(() => {
         Axios.post('/api/product/getProducts')
             .then(response => {
@@ -63,8 +64,9 @@ function Home() {
                             Y={1}
                         />
                     </div>
-                    <h4><Title title="LATEST NEWS" /></h4>
-                    <div className="latestnews img-full">
+                    {isBigEnough ? <div>
+                        <h4><Title title="LATEST NEWS" /></h4>
+                    <div className="latestnews">
                         <RenderLatestNews
                             Products={Products}
                             X={1}
@@ -72,7 +74,7 @@ function Home() {
                             categories={categories}
                         />
                     </div>
-                    <div className="latestnews img-full">
+                    <div className="latestnews">
                         <RenderLatestNews
                             Products={Products}
                             X={4}
@@ -80,6 +82,10 @@ function Home() {
                             categories={categories}
                         />
                     </div>
+                    </div>
+                    : null
+                    }
+                    
                     <hr/>
                 </div>
                 <div className="column right col-4 col-s-12 right1">
@@ -133,7 +139,7 @@ function Home() {
                             categories={categories}
                         />
                         </div>
-                        
+                        <div className="padding30px2"/>
                         <div className="lifebox2 img-full">
                         <RenderLife
                             X={13}
