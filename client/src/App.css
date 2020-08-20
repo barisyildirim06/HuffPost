@@ -471,6 +471,10 @@
     .footer-logo{display: none;}
     .container{width:100%}
     .padding30px2{padding-bottom: 30px;}
+    h4.ıtspersonalmain {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
   }
   
   @media only screen and (min-width: 780px) {
@@ -497,6 +501,10 @@
     .container{width: 100%;} 
     .padding30px2{padding-bottom: 0px;}
     .footer-logo{display: none;}
+    h4.ıtspersonalmain {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
   }
   @media only screen and (min-width: 1000px) {
     /* For desktop: */
@@ -515,6 +523,10 @@
     .bottompart{column-count: 4;}
     .padding30px2{padding-bottom: 0px;}
     .footer-logo{display: none;}
+    h4.ıtspersonalmain {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
   }
   @media only screen and (min-width: 1200px) {
     /* For desktop: */
@@ -542,6 +554,10 @@
     .bottompart{column-count: 4;}
     .padding30px2{padding-bottom: 0px;}
     .footer-logo{display: none;}
+    h4.ıtspersonalmain {
+      padding-left: 410px;
+      padding-right: 410px;
+    }
   }
   /* end of Responsive design */
   /* TextArea start*/
@@ -555,7 +571,35 @@
     column-gap: 40px;
     text-align: left;
     float: left;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+  }
+  .latestphonecategory{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 5px;
+    display: flex;
+    text-align: left;
+    padding-left: 20px;
+    text-align: left;
+  }
+  .latestphonecategory a{
+    text-decoration: none;
+    color: #333333;;
+    transition: var(--mainTransition);
+  }
+  .latestphone-img{
+    height:82px;
+    width: 143px;
+    float:left;
+  }
+  .latestphonebox{
+    padding-top: 20px;
+    padding-bottom: 100px;
+    max-height: 100px;
+    margin-bottom: 10px;
   }
   
   .latestnewsheader{
@@ -686,8 +730,6 @@
     font-style: normal;
   }
   h4.ıtspersonalmain {
-    padding-left: 410px;
-    padding-right: 410px;
     font-family: sans-serif;
     font-size: 18px;
     line-height: 24px;

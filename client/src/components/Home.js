@@ -9,6 +9,7 @@ import RenderBottomPart from './utils/RenderBottomPart'
 import RenderWhatsHappening from './utils/RenderWhatsHappening'
 import RenderPersonalNews from './utils/RenderPersonalNews'
 import RenderLife from './utils/RenderLife'
+import RenderLatestPhone from './utils/RenderLatestPhone'
 import Title from './Title'
 import { useMediaQuery } from 'react-responsive'
 
@@ -56,7 +57,7 @@ function Home() {
     return (
         <div>
             <div className="container">
-                <div className="column col-8 col-s-12 left1 img-full">
+                <div className="column col-8 col-s-12 left1">
                     <div>
                         <RenderFirstPost
                             Products={Products}
@@ -66,7 +67,7 @@ function Home() {
                     </div>
                     {isBigEnough ? <div>
                         <h4><Title title="LATEST NEWS" /></h4>
-                    <div className="latestnews">
+                    <div className="latestnews img-full">
                         <RenderLatestNews
                             Products={Products}
                             X={1}
@@ -74,19 +75,29 @@ function Home() {
                             categories={categories}
                         />
                     </div>
-                    <div className="latestnews">
+                    <div className="latestnews img-full">
                         <RenderLatestNews
                             Products={Products}
                             X={4}
                             Y={7}
                             categories={categories}
                         />
+                        <div className="padding30px"/>
                     </div>
-                    </div>
-                    : null
-                    }
                     
                     <hr/>
+                    </div>
+                    : <div >
+                    <RenderLatestPhone
+                        Products={Products}
+                        X={1}
+                        Y={7}
+                        categories={categories}
+                    />
+                </div>
+                    }
+                    
+                    
                 </div>
                 <div className="column right col-4 col-s-12 right1">
                     <h4><Title title="CORONAVIRUS" /></h4>
@@ -99,7 +110,7 @@ function Home() {
                     />
                 </div>
                 <div className="column col-8 col-s-12 left1">
-                    <br /><br /><br />
+                    <br /><br />
                     <h4><Title title="FEATURED" /></h4>
                     <div className="featured img-full">
                         <RenderFeatured
@@ -109,7 +120,7 @@ function Home() {
                             categories={categories}
                         />
                     </div>
-                    <br />
+                    {isBigEnough ? <div className="padding30px"/> : null}
                     <div className="featured img-full">
                         <RenderFeatured
                             X={9}
@@ -164,7 +175,6 @@ function Home() {
                 <div className="column right col-4 col-s-12 right1 ">
                     <br />
                     <br />
-                    <br />
                     <h4><Title title="👇WHAT'S HAPPENING👇" /></h4>
                     <RenderWhatsHappening
                         X={12}
@@ -174,61 +184,118 @@ function Home() {
                 </div>
             </div>
             <div >
-                
                 <RenderItsPersonal />
             </div>
             <div className="container">
-                <div className="column col-8 col-s-12 left1 img-full">
-                    <div >
-                        <br/>
-                        <br/>
-                        <hr/>
-                        <RenderPersonalNews
-                            X={11}
-                            Y={21}
-                            Products={Products}
-                            categories={categories}
-                        />
-                    </div>
+                <div className="column col-8 col-s-12 left1 ">
+                    {isBigEnough ? 
+                    <div className="img-full">
+                    <br/>
+                    <br/>
+                    <hr/>
+                    <RenderPersonalNews
+                        X={11}
+                        Y={21}
+                        Products={Products}
+                        categories={categories}
+                    />
+                </div>
+                : null}
                     <h4 className="bottompartbox"><Title title="POLITICS" /></h4>
-                    <div className="bottompart img-full">
+                    {isBigEnough ? <div>
+                        <div className="bottompart img-full">
                         <RenderBottomPart
                             Products={Products}
                             X={0}
                             Y={4}
                             categories={categories}
                         />
+                        
                     </div>
                     <hr/>
+                    </div>
+                    :
+                    <div >
+                    <RenderLatestPhone
+                        Products={Products}
+                        X={0}
+                        Y={4}
+                        categories={categories}
+                    />
+                </div>
+                    }
+                    
                     <h4 className="bottompartbox"><Title title="ENTERTAINMENT" /></h4>
-                    <div className="bottompart img-full">
+                    {isBigEnough ? <div>
+                        <div className="bottompart img-full">
                         <RenderBottomPart
                             Products={Products}
                             X={4}
                             Y={8}
                             categories={categories}
                         />
+                        
                     </div>
                     <hr/>
+                    </div>
+                    :
+                    <div >
+                    <RenderLatestPhone
+                        Products={Products}
+                        X={4}
+                        Y={8}
+                        categories={categories}
+                    />
+                </div>
+                    }
+                    
                     <h4 className="bottompartbox"><Title title="LIFE" /></h4>
-                    <div className="bottompart img-full">
+                    {isBigEnough ? <div>
+                        <div className="bottompart img-full">
                         <RenderBottomPart
                             Products={Products}
                             X={8}
                             Y={12}
                             categories={categories}
                         />
+                        
                     </div>
                     <hr/>
+                    </div>
+                    :
+                    <div >
+                    <RenderLatestPhone
+                        Products={Products}
+                        X={8}
+                        Y={12}
+                        categories={categories}
+                    />
+                </div>
+                    }
+                    
                     <h4 className="bottompartbox"><Title title="shoping" /></h4>
-                    <div className="bottompart img-full">
+                    {isBigEnough ? <div>
+                        <div className="bottompart img-full">
                         <RenderBottomPart
                             Products={Products}
                             X={12}
                             Y={16}
                             categories={categories}
                         />
+                        
                     </div>
+                    <hr/>
+                    </div>
+                    :
+                    <div >
+                    <RenderLatestPhone
+                        Products={Products}
+                        X={12}
+                        Y={16}
+                        categories={categories}
+                    />
+                </div>
+                    }
                     
                 </div>
             </div>
