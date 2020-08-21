@@ -13,25 +13,35 @@ import { useSelector } from "react-redux";
 function Navbar(props) {
 
     const user = useSelector(state => state.user)
-
+    const X = 5
     const logoutHandler = () => {
         axios.get(`${USER_SERVER}/logout`).then(response => {
-          if (response.status === 200) {
-            props.history.push("/login");
-          } else {
-            alert('Log Out Failed')
-          }
+            if (response.status === 200) {
+                props.history.push("/login");
+            } else {
+                alert('Log Out Failed')
+            }
         });
-      };
-    return (
+    };
+    window.onscroll = function () { scrollFunction() };
 
-        <nav className="navbar">
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("navbar").style.top = "-43px";
+            document.getElementById("nav-logo2").style.display = "flex";
+        } else {
+            document.getElementById("navbar").style.top = "0px";
+            document.getElementById("nav-logo2").style.display = "none";
+        }
+    }
+    return (
+        <nav id="navbar">
             <div className="nav-center">
                 <Link to="/">
                     <img src={logo} className="nav-logo" alt="HUFFPOST" />
                 </Link>
             </div>
-            <div className="nav-login"> 
+            <div className="nav-login">
                 {user.userData && !user.userData.isAuth ? <ul className="nav-links">
                     <li>
                         <Link to="/login">Signin</Link>
@@ -63,10 +73,16 @@ function Navbar(props) {
             >
                 <FiSearch className="nav-icon" />
             </button>
-            
+
             <div >
                 <hr className="hide" />
+                <div className="navlogotohide">
+                        <Link to="/">
+                            <img src={logo} id="nav-logo2" alt="HUFFPOST" />
+                        </Link>
+                    </div>
                 <ul className="nav-links">
+                    
                     <li>
                         <Link to="/news">NEWS</Link>
                     </li>
