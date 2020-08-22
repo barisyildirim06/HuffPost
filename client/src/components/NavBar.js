@@ -26,7 +26,7 @@ function Navbar(props) {
     window.onscroll = function () { scrollFunction() };
 
     function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        if (document.body.scrollTop > 1120 || document.documentElement.scrollTop > 20) {
             document.getElementById("navbar").style.top = "-43px";
             document.getElementById("nav-logo2").style.display = "flex";
         } else {
@@ -78,7 +78,7 @@ function Navbar(props) {
                 <hr className="hide" />
                 <div className="navlogotohide">
                         <Link to="/">
-                            <img src={logo} id="nav-logo2" alt="HUFFPOST" />
+                            <img src={logo} id="nav-logo2"  alt="HUFFPOST" />
                         </Link>
                     </div>
                 <ul className="nav-links">

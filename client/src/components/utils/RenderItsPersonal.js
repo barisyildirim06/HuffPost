@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from "react-router-dom";
 
 
-function Footer() {
+
+function RenderItsPersonal() {
     return (
         <div>
             <div className="personal">
@@ -18,4 +18,4 @@ function Footer() {
     )
 }
 
-export default Footer
+export default RenderItsPersonal

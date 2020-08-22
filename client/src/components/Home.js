@@ -6,12 +6,14 @@ import RenderFirstPost from './utils/RenderFirstPost'
 import RenderCoronaVırus from './utils/RenderCoronaVırus'
 import RenderItsPersonal from './utils/RenderItsPersonal'
 import RenderBottomPart from './utils/RenderBottomPart'
+import RenderVideos from './utils/RenderVideos'
 import RenderWhatsHappening from './utils/RenderWhatsHappening'
 import RenderPersonalNews from './utils/RenderPersonalNews'
 import RenderLife from './utils/RenderLife'
 import RenderLatestPhone from './utils/RenderLatestPhone'
 import Title from './Title'
 import { useMediaQuery } from 'react-responsive'
+
 
 function Home() {
     const categories = [
@@ -172,6 +174,7 @@ function Home() {
                 <br/>
 
                 </div>
+                
                 <div className="column right col-4 col-s-12 right1 ">
                     <br />
                     <br />
@@ -183,6 +186,9 @@ function Home() {
                     />
                 </div>
             </div>
+            {/* <div >
+            <RenderVideos />
+            </div> */}
             <div >
                 <RenderItsPersonal />
             </div>

@@ -116,7 +116,6 @@ h6.thick {
   position: fixed;
   background-color: black;
   top: 0;
-  transition: top 0.3s;
   left: 0;
   width: 100%;
   padding: 0.75rem 2rem;
@@ -480,6 +479,7 @@ h6.thick {
     padding-left: 100px;
     padding-right: 100px;
   }
+  .navlogotohide{display: none;}
 }
 
 @media only screen and (min-width: 780px) {
@@ -510,6 +510,7 @@ h6.thick {
     padding-left: 100px;
     padding-right: 100px;
   }
+  .navlogotohide{display: none;}
 }
 @media only screen and (min-width: 1000px) {
   /* For desktop: */
@@ -520,7 +521,6 @@ h6.thick {
   .nav-links {display: flex;}
   .hide{display:flex}
   .container{width: 100%;} 
-  .footer-logo{display: flex;}
   .lifebox2{height: 420px;}
   .latestnews {column-count: 3;}
   .lifebox{column-count: 2;}
@@ -532,6 +532,7 @@ h6.thick {
     padding-left: 100px;
     padding-right: 100px;
   }
+  .navlogotohide{display: flex;}
 }
 @media only screen and (min-width: 1200px) {
   /* For desktop: */
@@ -563,6 +564,7 @@ h6.thick {
     padding-left: 410px;
     padding-right: 410px;
   }
+  .navlogotohide{display: flex;}
 }
 /* end of Responsive design */
 /* TextArea start*/
@@ -861,3 +863,31 @@ h4.ıtspersonalmain {
 }
 
 /* Life End */
+/* Videos start */
+.videos {
+  width: 1188px;
+  height: 558px;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+.videos-container {
+  position: relative;
+  justify-content: left;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  padding-top: 3em;
+  padding-bottom: 1em;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  text-align: center;
+  float: left;
+}
+.videobox{
+  margin-left: 35px;
+
+}
+/* Videos end */
+
+.test{background-color: yellow;}
