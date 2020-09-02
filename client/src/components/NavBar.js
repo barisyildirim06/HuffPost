@@ -26,7 +26,7 @@ function Navbar(props) {
     window.onscroll = function () { scrollFunction() };
 
     function scrollFunction() {
-        if (document.body.scrollTop > 1120 || document.documentElement.scrollTop > 20) {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             document.getElementById("navbar").style.top = "-43px";
             document.getElementById("nav-logo2").style.display = "flex";
         } else {

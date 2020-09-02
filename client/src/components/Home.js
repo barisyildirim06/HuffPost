@@ -6,7 +6,7 @@ import RenderFirstPost from './utils/RenderFirstPost'
 import RenderCoronaVırus from './utils/RenderCoronaVırus'
 import RenderItsPersonal from './utils/RenderItsPersonal'
 import RenderBottomPart from './utils/RenderBottomPart'
-import RenderVideos from './utils/RenderVideos'
+import RenderVideoPage from './utils/RenderVideoPage'
 import RenderWhatsHappening from './utils/RenderWhatsHappening'
 import RenderPersonalNews from './utils/RenderPersonalNews'
 import RenderLife from './utils/RenderLife'
@@ -30,7 +30,7 @@ function Home() {
     const [Products, setProducts] = useState([])
     const isBigEnough = useMediaQuery({
         query: '(min-width: 780px)'
-      })
+    })
     useEffect(() => {
         Axios.post('/api/product/getProducts')
             .then(response => {
@@ -43,13 +43,13 @@ function Home() {
     }, [])
 
     const FilteredCoronaVırus = Products.slice(11, 100).filter(product => {
-        if (product.categories == 1) {
+        if (product.categories === 1) {
             return product
         }
     })
 
     const FilteredPolitics = Products.slice(11, 100).filter(product => {
-        if (product.categories == 2) {
+        if (product.categories === 2) {
             return product
         }
     })
@@ -69,41 +69,41 @@ function Home() {
                     </div>
                     {isBigEnough ? <div>
                         <h4><Title title="LATEST NEWS" /></h4>
-                    <div className="latestnews img-full">
-                        <RenderLatestNews
-                            Products={Products}
-                            X={1}
-                            Y={4}
-                            categories={categories}
-                        />
+                        <div className="latestnews img-full">
+                            <RenderLatestNews
+                                Products={Products}
+                                X={1}
+                                Y={4}
+                                categories={categories}
+                            />
+                        </div>
+                        <div className="latestnews img-full">
+                            <RenderLatestNews
+                                Products={Products}
+                                X={4}
+                                Y={7}
+                                categories={categories}
+                            />
+                            <div className="padding30px" />
+                        </div>
+
+                        <hr />
                     </div>
-                    <div className="latestnews img-full">
-                        <RenderLatestNews
-                            Products={Products}
-                            X={4}
-                            Y={7}
-                            categories={categories}
-                        />
-                        <div className="padding30px"/>
-                    </div>
-                    
-                    <hr/>
-                    </div>
-                    : <div >
-                    <RenderLatestPhone
-                        Products={Products}
-                        X={1}
-                        Y={7}
-                        categories={categories}
-                    />
-                </div>
+                        : <div >
+                            <RenderLatestPhone
+                                Products={Products}
+                                X={1}
+                                Y={7}
+                                categories={categories}
+                            />
+                        </div>
                     }
-                    
-                    
+
+
                 </div>
                 <div className="column right col-4 col-s-12 right1">
                     <h4><Title title="CORONAVIRUS" /></h4>
-                    <br/>
+                    <br />
                     <RenderCoronaVırus
                         Products={FilteredCoronaVırus}
                         X={0}
@@ -122,7 +122,7 @@ function Home() {
                             categories={categories}
                         />
                     </div>
-                    {isBigEnough ? <div className="padding30px"/> : null}
+                    {isBigEnough ? <div className="padding30px" /> : null}
                     <div className="featured img-full">
                         <RenderFeatured
                             X={9}
@@ -131,50 +131,57 @@ function Home() {
                             categories={categories}
                         />
                     </div>
-                    <br/>
-                    <hr/>
+                    <br />
+                    <hr />
+                </div>
+            </div>
+            <div >
+                <RenderVideoPage />
+            </div>
+            <div className="container">
+                <div className="column col-8 col-s-12 left1">
                     <h4 className="montserrat"><b>LIFE</b></h4>
                     <div className="lifebox">
-                    <div className="lifebox2 img-full">
-                        <RenderLife
-                            X={11}
-                            Y={12}
-                            Products={Products}
-                            categories={categories}
-                        />
-                        </div>
-                        <div className="padding30px"/>
                         <div className="lifebox2 img-full">
-                        <RenderLife
-                            X={12}
-                            Y={13}
-                            Products={Products}
-                            categories={categories}
-                        />
+                            <RenderLife
+                                X={11}
+                                Y={12}
+                                Products={Products}
+                                categories={categories}
+                            />
                         </div>
-                        <div className="padding30px2"/>
+                        <div className="padding30px" />
                         <div className="lifebox2 img-full">
-                        <RenderLife
-                            X={13}
-                            Y={14}
-                            Products={Products}
-                            categories={categories}
-                        />
+                            <RenderLife
+                                X={12}
+                                Y={13}
+                                Products={Products}
+                                categories={categories}
+                            />
                         </div>
-                        <div className="padding30px"/>
+                        <div className="padding30px2" />
                         <div className="lifebox2 img-full">
-                        <RenderLife
-                            X={14}
-                            Y={15}
-                            Products={Products}
-                            categories={categories}
-                        />
+                            <RenderLife
+                                X={13}
+                                Y={14}
+                                Products={Products}
+                                categories={categories}
+                            />
+                        </div>
+                        <div className="padding30px" />
+                        <div className="lifebox2 img-full">
+                            <RenderLife
+                                X={14}
+                                Y={15}
+                                Products={Products}
+                                categories={categories}
+                            />
                         </div>
                     </div>
-                <br/>
+                    <br />
 
                 </div>
-                
+
                 <div className="column right col-4 col-s-12 right1 ">
                     <br />
                     <br />
@@ -186,126 +193,124 @@ function Home() {
                     />
                 </div>
             </div>
-            {/* <div >
-            <RenderVideos />
-            </div> */}
             <div >
                 <RenderItsPersonal />
-            </div>
+            </div> 
             <div className="container">
                 <div className="column col-8 col-s-12 left1 ">
-                    {isBigEnough ? 
-                    <div className="img-full">
-                    <br/>
-                    <br/>
-                    <hr/>
-                    <RenderPersonalNews
-                        X={11}
-                        Y={21}
-                        Products={Products}
-                        categories={categories}
-                    />
-                </div>
-                : null}
+
+                    {isBigEnough ?
+                        <div className="img-full">
+                            <br />
+                            <br />
+                            <hr />
+                            <RenderPersonalNews
+                                X={11}
+                                Y={21}
+                                Products={Products}
+                                categories={categories}
+                            />
+                        </div>
+                        : null}
                     <h4 className="bottompartbox"><Title title="POLITICS" /></h4>
                     {isBigEnough ? <div>
                         <div className="bottompart img-full">
-                        <RenderBottomPart
-                            Products={Products}
-                            X={0}
-                            Y={4}
-                            categories={categories}
-                        />
-                        
+                            <RenderBottomPart
+                                Products={Products}
+                                X={0}
+                                Y={4}
+                                categories={categories}
+                            />
+
+                        </div>
+                        <hr />
                     </div>
-                    <hr/>
-                    </div>
-                    :
-                    <div >
-                    <RenderLatestPhone
-                        Products={Products}
-                        X={0}
-                        Y={4}
-                        categories={categories}
-                    />
-                </div>
+                        :
+                        <div >
+                            <RenderLatestPhone
+                                Products={Products}
+                                X={0}
+                                Y={4}
+                                categories={categories}
+                            />
+                        </div>
                     }
-                    
+
                     <h4 className="bottompartbox"><Title title="ENTERTAINMENT" /></h4>
                     {isBigEnough ? <div>
                         <div className="bottompart img-full">
-                        <RenderBottomPart
-                            Products={Products}
-                            X={4}
-                            Y={8}
-                            categories={categories}
-                        />
-                        
+                            <RenderBottomPart
+                                Products={Products}
+                                X={4}
+                                Y={8}
+                                categories={categories}
+                            />
+
+                        </div>
+                        <hr />
                     </div>
-                    <hr/>
-                    </div>
-                    :
-                    <div >
-                    <RenderLatestPhone
-                        Products={Products}
-                        X={4}
-                        Y={8}
-                        categories={categories}
-                    />
-                </div>
+                        :
+                        <div >
+                            <RenderLatestPhone
+                                Products={Products}
+                                X={4}
+                                Y={8}
+                                categories={categories}
+                            />
+                        </div>
                     }
-                    
+
                     <h4 className="bottompartbox"><Title title="LIFE" /></h4>
                     {isBigEnough ? <div>
                         <div className="bottompart img-full">
-                        <RenderBottomPart
-                            Products={Products}
-                            X={8}
-                            Y={12}
-                            categories={categories}
-                        />
-                        
+                            <RenderBottomPart
+                                Products={Products}
+                                X={8}
+                                Y={12}
+                                categories={categories}
+                            />
+
+                        </div>
+                        <hr />
                     </div>
-                    <hr/>
-                    </div>
-                    :
-                    <div >
-                    <RenderLatestPhone
-                        Products={Products}
-                        X={8}
-                        Y={12}
-                        categories={categories}
-                    />
-                </div>
+                        :
+                        <div >
+                            <RenderLatestPhone
+                                Products={Products}
+                                X={8}
+                                Y={12}
+                                categories={categories}
+                            />
+                        </div>
                     }
-                    
+
                     <h4 className="bottompartbox"><Title title="shoping" /></h4>
                     {isBigEnough ? <div>
                         <div className="bottompart img-full">
-                        <RenderBottomPart
-                            Products={Products}
-                            X={12}
-                            Y={16}
-                            categories={categories}
-                        />
-                        
+                            <RenderBottomPart
+                                Products={Products}
+                                X={12}
+                                Y={16}
+                                categories={categories}
+                            />
+
+                        </div>
+                        <hr />
                     </div>
-                    <hr/>
-                    </div>
-                    :
-                    <div >
-                    <RenderLatestPhone
-                        Products={Products}
-                        X={12}
-                        Y={16}
-                        categories={categories}
-                    />
-                </div>
+                        :
+                        <div >
+                            <RenderLatestPhone
+                                Products={Products}
+                                X={12}
+                                Y={16}
+                                categories={categories}
+                            />
+                        </div>
                     }
-                    
+
                 </div>
             </div>
-            
+
 
         </div>
 
