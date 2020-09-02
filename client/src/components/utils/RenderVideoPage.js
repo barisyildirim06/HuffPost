@@ -38,7 +38,7 @@ function RenderVideoPage() {
                 <h4><Title title="TOP VIDEOS" color="#0dbe98" /></h4>
                 <div class="video-wrap">
                     <div class="video">
-                        <iframe width='765px' height='433px' id="video1" src="http://www.youtube.com/embed/_YgqROO4BYw?autoplay=1&mute=1&enablejsapi=1" frameborder="0" gesture="media" allowfullscreen></iframe>
+                        <iframe width='765px' height='433px' id="video1" src="https://www.youtube.com/embed/_YgqROO4BYw?autoplay=1&mute=1&enablejsapi=1" frameborder="0" gesture="media" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
