@@ -6,9 +6,9 @@ function RenderProducts(props) {
     const Y = props.Y;
     const Products = props.Products;
     return (Products.slice(X,Y).map((product) => {
-        return <div >
+        return <div className="img-full">
              <h1 className="firstnew-links"><Link to={`/product/${product._id}`}>{product.title.toUpperCase()}</Link></h1>
-           <Link to={`/product/${product._id}`}><img className="img-container" src={product.imageshorizontal} alt={product.imageshorizontal }/></Link> 
+           <Link to={`/product/${product._id}`}><img  src={product.imageshorizontal} alt={product.imageshorizontal }/></Link> 
                 <br />
                 <br />
                 <br />

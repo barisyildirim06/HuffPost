@@ -553,7 +553,8 @@ h6.thick {
   .container{
     width: 1170px !important;
   }
-  .personal{width:1310px}
+  .videos{width: 1188px;
+  }
   .footer-logo{display: flex;}
   .lifebox2{height: 420px;}
   .latestnews {column-count: 3;}
@@ -567,6 +568,9 @@ h6.thick {
     padding-right: 410px;
   }
   .navlogotohide{display: flex;}
+}
+@media only screen and (min-width: 1310px){
+  .personal{width:1310px}
 }
 /* end of Responsive design */
 /* TextArea start*/
@@ -721,9 +725,9 @@ p.featuredtext {
 }
 .personal-container {
   position: relative;
+  width: 100%;
   justify-content: left;
   bottom: 0;
-  width: 100%;
   padding-top: 3em;
   padding-bottom: 1em;
   background-color: #1a1a1a;
@@ -867,9 +871,7 @@ h4.ıtspersonalmain {
 /* Life End */
 /* Videos start */
 .videos {
-  width: 1188px;
-  height: 558px;
-
+  position: relative;  
   margin-right: auto;
   margin-left: auto;
 }
@@ -919,3 +921,10 @@ h4.ıtspersonalmain {
 .ses{padding-left: 1px;}
 
 /* Videos end */
+/* Row start*/
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
+}
+/* Row end */

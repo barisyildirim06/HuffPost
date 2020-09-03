@@ -67,7 +67,7 @@ function Home() {
                             Y={1}
                         />
                     </div>
-                    {isBigEnough ? <div>
+                    {isBigEnough ? <div >
                         <h4><Title title="LATEST NEWS" /></h4>
                         <div className="latestnews img-full">
                             <RenderLatestNews
@@ -89,7 +89,7 @@ function Home() {
 
                         <hr />
                     </div>
-                        : <div >
+                        : <div row>
                             <RenderLatestPhone
                                 Products={Products}
                                 X={1}

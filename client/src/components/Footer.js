@@ -112,7 +112,7 @@ function Footer() {
                 <hr/>
                 <ul className="footer2-text">
                         <li>
-                           Part of HuffPost News. ©2020 Verizon Media. All rights reserved.
+                           Clone of HuffPost News which is coded by Barış Yıldırım
                         </li>
                         <li>
                            The Huffington Post
