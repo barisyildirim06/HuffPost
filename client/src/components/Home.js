@@ -89,7 +89,7 @@ function Home() {
 
                         <hr />
                     </div>
-                        : <div row>
+                        : <div >
                             <RenderLatestPhone
                                 Products={Products}
                                 X={1}
