@@ -464,244 +464,111 @@ h6.thick {
 /* End of container */
 @media only screen and (min-width: 100px) {
   /* For tablets: */
-  .nav-links {
-    display: none;
-  }
-  .hide {
-    display: none;
-  }
-  .lifebox {
-    column-count: 1;
-  }
-  .featured {
-    column-count: 1;
-  }
-  .bottompart {
-    column-count: 1;
-  }
-  .lifebox2 {
-    height: fit-content;
-  }
-  .footer-logo {
-    display: none;
-  }
-  .container {
-    width: 100%;
-  }
-  .padding30px2 {
-    padding-bottom: 30px;
-  }
+  .nav-links {display: none;}
+  .hide{display:none;}
+  .lifebox{column-count: 1;}
+  .featured{column-count: 1;}
+  .bottompart{column-count: 1;}
+  .lifebox2{height: fit-content;}
+  .footer-logo{display: none;}
+  .container{width:100%}
+  .padding30px2{padding-bottom: 30px;}
   h4.ıtspersonalmain {
     padding-left: 100px;
     padding-right: 100px;
   }
-  .navlogotohide {
-    display: none;
-  }
+  .navlogotohide{display: none;}
+  
 }
 
 @media only screen and (min-width: 780px) {
   /* For tablets: */
-  .col-s-1 {
-    width: 8.33%;
-  }
-  .col-s-2 {
-    width: 16.66%;
-  }
-  .col-s-3 {
-    width: 25%;
-  }
-  .col-s-4 {
-    width: 33.33%;
-  }
-  .col-s-5 {
-    width: 41.66%;
-  }
-  .col-s-6 {
-    width: 50%;
-  }
-  .col-s-7 {
-    width: 58.33%;
-  }
-  .col-s-8 {
-    width: 66.66%;
-  }
-  .col-s-9 {
-    width: 75%;
-  }
-  .col-s-10 {
-    width: 83.33%;
-  }
-  .col-s-11 {
-    width: 91.66%;
-  }
-  .col-s-12 {
-    width: 100%;
-  }
-  .nav-links {
-    display: none;
-  }
-  .hide {
-    display: none;
-  }
-  .lifebox2 {
-    height: 420px;
-  }
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+  .nav-links {display: none;}
+  .hide{display:none;}
+  .lifebox2{height: 420px;}
 
-  .lifebox {
-    column-count: 2;
-  }
-  .featured {
-    column-count: 2;
-  }
-  .bottompart {
-    column-count: 4;
-  }
-  .container {
-    width: 770px;
-  }
-  .padding30px2 {
-    padding-bottom: 0px;
-  }
-  .footer-logo {
-    display: none;
-  }
+  .lifebox{column-count: 2;}
+  .featured{column-count: 2;}
+  .bottompart{column-count: 4;}
+  .container{width: 770px;} 
+  .padding30px2{padding-bottom: 0px;}
+  .footer-logo{display: none;}
   h4.ıtspersonalmain {
     padding-left: 100px;
     padding-right: 100px;
   }
-  .navlogotohide {
-    display: none;
-  }
+  .navlogotohide{display: none;}
+
 }
 @media only screen and (min-width: 1000px) {
   /* For desktop: */
-  .right1 {
-    width: 35%;
-  }
-  .left1 {
-    width: 65%;
-  }
-  .nav-links {
-    display: flex;
-  }
-  .hide {
-    display: flex;
-  }
-  .container {
-    width: 100%;
-  }
-  .lifebox2 {
-    height: 420px;
-  }
+  .right1{width:35%}
+  .left1{width:65%}
+  .nav-links {display: flex;}
+  .hide{display:flex}
+  .container{width: 100%;} 
+  .lifebox2{height: 420px;}
 
-  .lifebox {
-    column-count: 2;
-  }
-  .featured {
-    column-count: 2;
-  }
-  .bottompart {
-    column-count: 4;
-  }
-  .padding30px2 {
-    padding-bottom: 0px;
-  }
-  .footer-logo {
-    display: none;
-  }
+  .lifebox{column-count: 2;}
+  .featured{column-count: 2;}
+  .bottompart{column-count: 4;}
+  .padding30px2{padding-bottom: 0px;}
+  .footer-logo{display: none;}
   h4.ıtspersonalmain {
     padding-left: 100px;
     padding-right: 100px;
   }
-  .navlogotohide {
-    display: flex;
-  }
+  .navlogotohide{display: flex;}
 }
 @media only screen and (min-width: 1200px) {
   /* For desktop: */
-  .col-1 {
-    width: 8.33%;
-  }
-  .col-2 {
-    width: 16.66%;
-  }
-  .col-3 {
-    width: 25%;
-  }
-  .col-4 {
-    width: 33.33%;
-  }
-  .col-5 {
-    width: 41.66%;
-  }
-  .col-6 {
-    width: 50%;
-  }
-  .col-7 {
-    width: 58.33%;
-  }
-  .col-8 {
-    width: 66.66%;
-  }
-  .col-9 {
-    width: 75%;
-  }
-  .col-10 {
-    width: 83.33%;
-  }
-  .col-11 {
-    width: 91.66%;
-  }
-  .col-12 {
-    width: 100%;
-  }
-  .nav-links {
-    display: flex;
-  }
-  .hide {
-    display: flex;
-  }
-  .container {
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+  .nav-links {display: flex;}
+  .hide{display:flex}
+  .container{
     width: 1170px !important;
   }
-  .videos {
-    width: 1188px;
+  .videos{width: 1188px;
   }
-  .footer-logo {
-    display: flex;
-  }
-  .lifebox2 {
-    height: 420px;
-  }
+  .footer-logo{display: flex;}
+  .lifebox2{height: 420px;}
 
-  .lifebox {
-    column-count: 2;
-  }
-  .featured {
-    column-count: 2;
-  }
-  .bottompart {
-    column-count: 4;
-  }
-  .padding30px2 {
-    padding-bottom: 0px;
-  }
-  .footer-logo {
-    display: flex;
-  }
+  .lifebox{column-count: 2;}
+  .featured{column-count: 2;}
+  .bottompart{column-count: 4;}
+  .padding30px2{padding-bottom: 0px;}
+  .footer-logo{display: flex;}
   h4.ıtspersonalmain {
     padding-left: 410px;
     padding-right: 410px;
   }
-  .navlogotohide {
-    display: flex;
-  }
+  .navlogotohide{display: flex;}
 }
-@media only screen and (min-width: 1310px) {
-  .personal {
-    width: 1310px;
-  }
+@media only screen and (min-width: 1310px){
+  .personal{width:1310px}
 }
 /* end of Responsive design */
 /* TextArea start*/
@@ -743,8 +610,8 @@ textarea {
 }
 
 .latestphone-img {
-  max-height: 82px;
-  max-width: 143px;
+  height: 82px;
+  width: 143px;
   float: left;
 }
 
@@ -863,8 +730,6 @@ p.featuredtext {
 /* Load More Button end */
 /* Its personal start */
 .personal {
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -1038,9 +903,6 @@ h4.ıtspersonalmain {
   color: #ffffff;
   /* text-align: center; */
   float: left;
-}
-.videobox {
-  margin-left: 35px;
 }
 @keyframes fade-in-up {
   0% {
