@@ -503,7 +503,7 @@ h6.thick {
   .lifebox{column-count: 2;}
   .featured{column-count: 2;}
   .bottompart{column-count: 4;}
-  .container{width: 100%;} 
+  .container{width: 770px;} 
   .padding30px2{padding-bottom: 0px;}
   .footer-logo{display: none;}
   h4.ıtspersonalmain {
@@ -581,7 +581,9 @@ textarea {
 
 /* LatestNews start */
 .latestnews {
-  column-gap: 40px;
+  display: grid;
+  grid-template-columns: 29.6% 29.6% 29.6% ;
+  grid-gap: 40px;
   text-align: left;
   float: left;
   padding-bottom: 10px;
@@ -755,6 +757,10 @@ h4.ıtspersonalmain {
   margin-bottom: 10px;
   text-align: left;
 }
+.personalimagebox{
+  max-height: 200px;
+  max-width: 355px;
+}
 .personalcategory {
   font-family: "Montserrat";
   font-style: normal;
@@ -794,8 +800,10 @@ h4.ıtspersonalmain {
   margin-bottom: 40px;
 }
 .bottompart {
+  display: grid;
+  grid-template-columns: auto auto auto auto ;
+  grid-gap: 40px;
   margin-bottom: 10px;
-  column-gap: 40px;
   text-align: left;
   float: left;
   padding-bottom: 20px;
@@ -922,9 +930,9 @@ h4.ıtspersonalmain {
 
 /* Videos end */
 /* Row start*/
-.row {
+.row2 {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: 50% 50%  ;
   grid-gap: 20px;
 }
 /* Row end */
