@@ -801,8 +801,8 @@ h4.ıtspersonalmain {
 }
 .bottompart {
   display: grid;
-  grid-template-columns: auto auto auto auto ;
-  grid-gap: 40px;
+  grid-template-columns: 21.9% 21.9% 21.9% 21.9% ;
+  grid-gap: 30px;
   margin-bottom: 10px;
   text-align: left;
   float: left;
