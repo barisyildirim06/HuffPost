@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { MdCancel } from 'react-icons/md';
 import Title from '../Title'
 import $ from 'jquery';
@@ -16,6 +16,7 @@ function RenderVideoPage() {
         $video.removeClass('stuck');
         $cancelButton.removeClass('stuck')
     }
+    
 
     const [VideoAvailable, setVideoAvailable] = useState(0)
     const [VideoSeen, setVideoSeen] = useState(0)
@@ -25,32 +26,54 @@ function RenderVideoPage() {
     var $cancelButton = $('.video-cancel-button')
     var videoHeight = $video.outerHeight();
 
-    $window.on('scroll', function () {
-        var innerHeight = $window.innerHeight()
-        var windowScrollTop = $window.scrollTop();
-        var videoBottom = videoHeight + $('.video-wrap').offset().top;
-        if(windowScrollTop > $('.video-wrap').offset().top) {
-            setVideoSeen(1)
+    $(document).ready(function(){
+        if($('.video-wrap').length){
+            switch(VideoAvailable){
+                case(1): $window.on('scroll', function () {
+                    setVideoAvailable(1)
+                    $video.removeClass('stuck');
+                    $cancelButton.removeClass('stuck')
+                    $cancelButton.addClass('none')
+                    console.log(VideoAvailable)
+                });
+                break;
+                case(0): $window.on('scroll', function () {
+                    console.log(VideoAvailable)
+                    var innerHeight = $window.innerHeight()
+                    var windowScrollTop = $window.scrollTop();
+                    var videoBottom = videoHeight + $('.video-wrap').offset().top;
+                    if(windowScrollTop > $('.video-wrap').offset().top) {
+                        setVideoSeen(1)
+                    } 
+                     if (windowScrollTop > videoHeight + $('.video-wrap').offset().top && VideoAvailable === 0) {
+                        console.log(`videoBottom= ${videoBottom}`)
+                        console.log(`videotop =  ${$('.video-wrap').offset().top - innerHeight}`)
+                        $videoWrap.height(videoHeight);
+                        $video.addClass('stuck');
+                        $cancelButton.addClass('stuck')
+                        $cancelButton.removeClass('none')
+                    } else if(windowScrollTop < videoBottom && windowScrollTop > ($('.video-wrap').offset().top-innerHeight) && VideoAvailable === 0){
+                        $videoWrap.height('auto');
+                        $video.removeClass('stuck');
+                        $cancelButton.removeClass('stuck')
+                        $cancelButton.addClass('none')
+                    } else if (VideoSeen ===1 && windowScrollTop < $('.video-wrap').offset().top && VideoAvailable === 0){
+                        $videoWrap.height(videoHeight);
+                        $video.addClass('stuck');
+                        $cancelButton.addClass('stuck')
+                         $cancelButton.removeClass('none')
+                    }
+                });
+                break;
+            }
         }
-         if (windowScrollTop > videoHeight + $('.video-wrap').offset().top) {
-            console.log(`videoBottom= ${videoBottom}`)
-            console.log(`videotop =  ${$('.video-wrap').offset().top - innerHeight}`)
-            $videoWrap.height(videoHeight);
-            $video.addClass('stuck');
-            $cancelButton.addClass('stuck')
-             $cancelButton.removeClass('none')
-        } else if(windowScrollTop < videoBottom && windowScrollTop > ($('.video-wrap').offset().top-innerHeight)){
-            $videoWrap.height('auto');
-            $video.removeClass('stuck');
-            $cancelButton.removeClass('stuck')
-            $cancelButton.addClass('none')
-        } else if (VideoSeen ===1 && windowScrollTop < $('.video-wrap').offset().top){
-            $videoWrap.height(videoHeight);
-            $video.addClass('stuck');
-            $cancelButton.addClass('stuck')
-             $cancelButton.removeClass('none')
-        }
-    });
+        
+    })
+
+    
+
+
+    
 
 
     //     const [VideoAvailable, setVideoAvailable] = useState(0)
