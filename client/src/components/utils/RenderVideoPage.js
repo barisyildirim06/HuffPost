@@ -12,56 +12,45 @@ function RenderVideoPage() {
     })
 
     const hideVideo = () => {
-        setVideoAvailable(0)
+        setVideoAvailable(1)
         $video.removeClass('stuck');
         $cancelButton.removeClass('stuck')
     }
 
-    const [VideoAvailable, setVideoAvailable] = useState(1)
-    const [VideoSeen, setVideoSeen] = useState(1)
+    const [VideoAvailable, setVideoAvailable] = useState(0)
+    const [VideoSeen, setVideoSeen] = useState(0)
     var $window = $(window);
     var $videoWrap = $('.video-wrap');
     var $video = $('.video');
     var $cancelButton = $('.video-cancel-button')
     var videoHeight = $video.outerHeight();
-     if ($( document ).ready) {
-        $window.on('scroll', function () {
-            var innerHeight = $window.innerHeight()
-            var windowScrollTop = $window.scrollTop();
-            if ($videoWrap.length) {
-                var videoBottom = videoHeight + $('.video-wrap').offset().top;
-                var videoTop = $('.video-wrap').offset().top - innerHeight;
-                if (windowScrollTop > $('.video-wrap').offset().top) {
-                    setVideoSeen(1)
-                }
-                if (VideoAvailable === 0){
-                    console.log(VideoAvailable)
-                    $video.removeClass('stuck');
-                    $cancelButton.removeClass('stuck')
-                } else if (windowScrollTop > videoBottom) {
-                    console.log(`videoBottom= ${videoBottom}`)
-                    console.log(`videotop =  ${videoTop}`)
-                    $videoWrap.height(videoHeight);
-                    $video.addClass('stuck');
-                    $cancelButton.addClass('stuck')
-                    $cancelButton.removeClass('none')
-                } else if (windowScrollTop < videoBottom && windowScrollTop > videoTop ) {
-                    $videoWrap.height('auto');
-                    $video.removeClass('stuck');
-                    $cancelButton.removeClass('stuck')
-                    $cancelButton.addClass('none')
-                } else if (VideoSeen === 1 && windowScrollTop < $('.video-wrap').offset().top) {
-                    $videoWrap.height(videoHeight);
-                    $video.addClass('stuck');
-                    $cancelButton.addClass('stuck')
-                    $cancelButton.removeClass('none')
-                }
-            }
-    
-        });
-    };
 
-    
+    $window.on('scroll', function () {
+        var innerHeight = $window.innerHeight()
+        var windowScrollTop = $window.scrollTop();
+        var videoBottom = videoHeight + $('.video-wrap').offset().top;
+        if(windowScrollTop > $('.video-wrap').offset().top) {
+            setVideoSeen(1)
+        }
+         if (windowScrollTop > videoHeight + $('.video-wrap').offset().top) {
+            console.log(`videoBottom= ${videoBottom}`)
+            console.log(`videotop =  ${$('.video-wrap').offset().top - innerHeight}`)
+            $videoWrap.height(videoHeight);
+            $video.addClass('stuck');
+            $cancelButton.addClass('stuck')
+             $cancelButton.removeClass('none')
+        } else if(windowScrollTop < videoBottom && windowScrollTop > ($('.video-wrap').offset().top-innerHeight)){
+            $videoWrap.height('auto');
+            $video.removeClass('stuck');
+            $cancelButton.removeClass('stuck')
+            $cancelButton.addClass('none')
+        } else if (VideoSeen ===1 && windowScrollTop < $('.video-wrap').offset().top){
+            $videoWrap.height(videoHeight);
+            $video.addClass('stuck');
+            $cancelButton.addClass('stuck')
+             $cancelButton.removeClass('none')
+        }
+    });
 
 
     //     const [VideoAvailable, setVideoAvailable] = useState(0)
