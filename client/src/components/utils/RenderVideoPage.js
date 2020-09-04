@@ -12,13 +12,13 @@ function RenderVideoPage() {
     })
 
     const hideVideo = () => {
-        setVideoAvailable(5)
+        setVideoAvailable(0)
         $video.removeClass('stuck');
         $cancelButton.removeClass('stuck')
     }
 
-    const [VideoAvailable, setVideoAvailable] = useState(0)
-    const [VideoSeen, setVideoSeen] = useState(0)
+    const [VideoAvailable, setVideoAvailable] = useState(1)
+    const [VideoSeen, setVideoSeen] = useState(1)
     var $window = $(window);
     var $videoWrap = $('.video-wrap');
     var $video = $('.video');
@@ -30,18 +30,22 @@ function RenderVideoPage() {
             var windowScrollTop = $window.scrollTop();
             if ($videoWrap.length) {
                 var videoBottom = videoHeight + $('.video-wrap').offset().top;
+                var videoTop = $('.video-wrap').offset().top - innerHeight;
                 if (windowScrollTop > $('.video-wrap').offset().top) {
                     setVideoSeen(1)
                 }
-    
-                if (windowScrollTop > (videoHeight + $('.video-wrap').offset().top)) {
+                if (VideoAvailable === 0){
+                    console.log(VideoAvailable)
+                    $video.removeClass('stuck');
+                    $cancelButton.removeClass('stuck')
+                } else if (windowScrollTop > videoBottom) {
                     console.log(`videoBottom= ${videoBottom}`)
-                    console.log(`videotop =  ${$('.video-wrap').offset().top - innerHeight}`)
+                    console.log(`videotop =  ${videoTop}`)
                     $videoWrap.height(videoHeight);
                     $video.addClass('stuck');
                     $cancelButton.addClass('stuck')
                     $cancelButton.removeClass('none')
-                } else if (windowScrollTop < (videoHeight + $('.video-wrap').offset().top) && windowScrollTop > ($('.video-wrap').offset().top - innerHeight)) {
+                } else if (windowScrollTop < videoBottom && windowScrollTop > videoTop ) {
                     $videoWrap.height('auto');
                     $video.removeClass('stuck');
                     $cancelButton.removeClass('stuck')
