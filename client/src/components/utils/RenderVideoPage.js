@@ -11,9 +11,6 @@ function RenderVideoPage() {
         query: '(min-width: 780px)'
     })
 
-    $(document).ready(function () {
-        $('body').on('click', function (e) { e.preventDefault() });
-    });
 
 
     const [VideoAvailable, setVideoAvailable] = useState(false)
@@ -36,11 +33,8 @@ function RenderVideoPage() {
             switch (VideoAvailable) {
                 case (true): $window.on('scroll', function () {
                     console.log(VideoAvailable)
-
                     $video.removeClass('stuck');
                     $cancelButton.removeClass('stuck')
-
-
                 });
                     break;
                 case (false): $window.on('scroll', function () {
