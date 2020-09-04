@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { MdCancel } from 'react-icons/md';
 import Title from '../Title'
 import $ from 'jquery';
@@ -7,10 +7,10 @@ import { useMediaQuery } from 'react-responsive'
 
 function RenderVideoPage() {
 
+
     const isBigEnough = useMediaQuery({
         query: '(min-width: 780px)'
     })
-
 
 
     const [VideoAvailable, setVideoAvailable] = useState(false)
@@ -21,23 +21,22 @@ function RenderVideoPage() {
     var $cancelButton = $('.video-cancel-button')
     var videoHeight = $video.outerHeight();
 
-    const hideVideo = (e) => {
+    const hideVideo = () => {
         setVideoAvailable(true)
         $video.removeClass('stuck');
         $cancelButton.removeClass('stuck')
-
     }
 
     $(document).ready(function () {
         if ($('.video-wrap').length) {
-            switch (VideoAvailable) {
-                case (true): $window.on('scroll', function () {
+            if (VideoAvailable === true){
+                $window.on('scroll', function () {
                     console.log(VideoAvailable)
                     $video.removeClass('stuck');
                     $cancelButton.removeClass('stuck')
                 });
-                    break;
-                case (false): $window.on('scroll', function () {
+            } else if(VideoAvailable === false){
+                $window.on('scroll', function () {
 
                     var innerHeight = $window.innerHeight()
                     var windowScrollTop = $window.scrollTop();
@@ -45,7 +44,7 @@ function RenderVideoPage() {
                     if (windowScrollTop > $('.video-wrap').offset().top) {
                         setVideoSeen(1)
                     }
-                    if (windowScrollTop > videoBottom ) {
+                    if (windowScrollTop > videoBottom && windowScrollTop < (videoBottom + 50)) {
                         $videoWrap.height(videoHeight);
                         $video.addClass('stuck');
                         $cancelButton.addClass('stuck')
@@ -62,8 +61,8 @@ function RenderVideoPage() {
                         $cancelButton.removeClass('none')
                     }
                 });
-                    break;
             }
+            
         }
 
     })
@@ -83,30 +82,30 @@ function RenderVideoPage() {
     //     var videoHeight = $video.outerHeight();
 
 
-    //     $window.on('scroll', function () {
-    //         var windowScrollTop = $window.scrollTop();
-    //         if(isComputer ){
-    //             if (windowScrollTop >1400){
-    //                 setVideoSeen(1)
-    //             }
-    //             if (windowScrollTop > 2600 ) {
-    //                 $videoWrap.height(videoHeight);
-    //                 $video.addClass('stuck');
-    //                 $cancelButton.addClass('stuck')
-    //                 $cancelButton.removeClass('none')
-    //             } else if (windowScrollTop >1400 && windowScrollTop <2600 ){
-    //                 $videoWrap.height('auto');
-    //                 $video.removeClass('stuck');
-    //                 $cancelButton.removeClass('stuck')
-    //                 $cancelButton.addClass('none')
-    //             }  else if (VideoSeen === 1 && windowScrollTop < 1400 ) {
-    //                 $videoWrap.height(videoHeight);
-    //                 $video.addClass('stuck');
-    //                 $cancelButton.addClass('stuck')
-    //                 $cancelButton.removeClass('none')
-    //             } 
-    //         } 
-    //     });
+    // $window.on('scroll', function () {
+    //     var windowScrollTop = $window.scrollTop();
+    //     if (isComputer) {
+    //         if (windowScrollTop > 1400) {
+    //             setVideoSeen(1)
+    //         }
+    //         if (windowScrollTop > 2600) {
+    //             $videoWrap.height(videoHeight);
+    //             $video.addClass('stuck');
+    //             $cancelButton.addClass('stuck')
+    //             $cancelButton.removeClass('none')
+    //         } else if (windowScrollTop > 1400 && windowScrollTop < 2600) {
+    //             $videoWrap.height('auto');
+    //             $video.removeClass('stuck');
+    //             $cancelButton.removeClass('stuck')
+    //             $cancelButton.addClass('none')
+    //         } else if (VideoSeen === 1 && windowScrollTop < 1400) {
+    //             $videoWrap.height(videoHeight);
+    //             $video.addClass('stuck');
+    //             $cancelButton.addClass('stuck')
+    //             $cancelButton.removeClass('none')
+    //         }
+    //     }
+    // });
 
 
     return (

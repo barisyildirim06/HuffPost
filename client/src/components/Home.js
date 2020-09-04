@@ -25,8 +25,7 @@ function Home() {
         { _id: 5, name: "LIFE" },
         { _id: 6, name: "SHOPIPING" }
     ]
-    const X = 0;
-    const Y = 6;
+
     const [Products, setProducts] = useState([])
     const isBigEnough = useMediaQuery({
         query: '(min-width: 780px)'
@@ -43,16 +42,18 @@ function Home() {
     }, [])
 
     const FilteredCoronaVırus = Products.slice(11, 100).filter(product => {
-        if (product.categories === 1) {
+        if (product.categories === 1){
             return product
         }
+        return product
     })
 
-    const FilteredPolitics = Products.slice(11, 100).filter(product => {
-        if (product.categories === 2) {
-            return product
-        }
-    })
+    // const FilteredPolitics = Products.slice(11, 100).filter(product => {
+    //     if (product.categories === 2) {
+    //         return product
+    //     }
+    //     return product
+    // })
 
 
 

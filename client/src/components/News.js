@@ -14,8 +14,6 @@ function News() {
         { _id: 5, name: "LIFE" },
         { _id: 6, name: "SHOPIPING" }
     ]
-    const X = 0;
-    const Y = 6;
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
     const [PostSize, setPostSize] = useState()

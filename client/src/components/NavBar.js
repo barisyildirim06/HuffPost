@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import logo from "../images/huffpost.png";
 import { FaAlignJustify } from "react-icons/fa";
@@ -13,7 +12,6 @@ import { useSelector } from "react-redux";
 function Navbar(props) {
 
     const user = useSelector(state => state.user)
-    const X = 5
     const logoutHandler = () => {
         axios.get(`${USER_SERVER}/logout`).then(response => {
             if (response.status === 200) {

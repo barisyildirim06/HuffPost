@@ -2,22 +2,22 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { Link } from 'react-router-dom'
 
-const Categories = [
-    { key: 1, value: "U.S. NEWS" },
-    { key: 2, value: "CORONAVIRUS" },
-    { key: 3, value: "POLITICS" },
-    { key: 4, value: "ENTERTAINMENT" },
-    { key: 5, value: "WORLD NEWS" },
-    { key: 6, value: "LIFE" },
-    { key: 7, value: "SHOPIPING" }
-]
+// const Categories = [
+//     { key: 1, value: "U.S. NEWS" },
+//     { key: 2, value: "CORONAVIRUS" },
+//     { key: 3, value: "POLITICS" },
+//     { key: 4, value: "ENTERTAINMENT" },
+//     { key: 5, value: "WORLD NEWS" },
+//     { key: 6, value: "LIFE" },
+//     { key: 7, value: "SHOPIPING" }
+// ]
 
 function DetailProductPage(props) {
 
-    const productId = props.match.params.productId
     const [Product, setProduct] = useState([])
 
     useEffect(() => {
+        const productId = props.match.params.productId
         Axios.get(`/api/product/products_by_id?id=${productId}&type=single`)
             .then(response => {
                 setProduct(response.data[0])
