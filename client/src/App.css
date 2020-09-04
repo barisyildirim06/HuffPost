@@ -913,6 +913,26 @@ h4.ıtspersonalmain {
     opacity: 1;
   }
 }
+.video-cancel-button.none{
+  display: none;
+}
+.video-cancel-button.stuck {
+  display: fixed;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  z-index: 2;
+  position: fixed;
+  bottom: 210px;
+  left: 388px;
+}
+.video-cancel-icon {
+  font-size: 1.5rem;
+  color: black;
+  border-radius: 50%;
+  background-color: white;
+}
 
 .video-wrap {
   text-align: left;
@@ -935,10 +955,6 @@ h4.ıtspersonalmain {
   animation: fade-in-up 0.25s ease forwards;
 }
 
-.ses {
-  padding-left: 1px;
-}
-
 /* Videos end */
 /* Row start*/
 .row2 {
@@ -947,3 +963,5 @@ h4.ıtspersonalmain {
   grid-gap: 20px;
 }
 /* Row end */
+
+

@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Auth from "./hoc/auth";
 // pages for this product
 import Home from "./components/Home.js";
+import Video from "./components/Video.js";
 import News from "./components/News.js";
 import Politics from './components/Politics.js';
 import DetailProductPage from "./components/DetailProductPage/DetailProductPage"
@@ -25,6 +26,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Auth(Home, null)} />
           <Route exact path="/news" component={Auth(News, null)} />
+          <Route exact path="/video" component={Auth(Video, null)} />
           <Route exact path="/news/politics" component={Auth(Politics, null)} />
           <Route exact path="/product/:productId" component={Auth(DetailProductPage, null)} />
           <Route exact path="/uploadpost" component={Auth(UploadProductPage, true)} />
