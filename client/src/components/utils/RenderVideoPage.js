@@ -24,7 +24,7 @@ function RenderVideoPage() {
     var $cancelButton = $('.video-cancel-button')
     var videoHeight = $video.outerHeight();
 
-    const hideVideo = () => {
+    const hideVideo = (e) => {
         setVideoAvailable(true)
         $video.removeClass('stuck');
         $cancelButton.removeClass('stuck')
@@ -50,7 +50,7 @@ function RenderVideoPage() {
                     if (windowScrollTop > $('.video-wrap').offset().top) {
                         setVideoSeen(1)
                     }
-                    if (windowScrollTop > videoHeight + $('.video-wrap').offset().top) {
+                    if (windowScrollTop > videoBottom && windowScrollTop < (videoBottom + 200)) {
                         $videoWrap.height(videoHeight);
                         $video.addClass('stuck');
                         $cancelButton.addClass('stuck')
