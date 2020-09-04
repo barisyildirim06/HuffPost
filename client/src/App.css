@@ -952,7 +952,7 @@ h4.ıtspersonalmain {
   width: 400px;
   height: 225px;
   transform: translateY(100%);
-  animation: fade-in-up 0.25s ease forwards;
+  animation: fade-in-up 0.5s ease forwards;
 }
 
 /* Videos end */
