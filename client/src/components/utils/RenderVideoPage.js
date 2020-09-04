@@ -28,6 +28,7 @@ function RenderVideoPage() {
         setVideoAvailable(true)
         $video.removeClass('stuck');
         $cancelButton.removeClass('stuck')
+
     }
 
     $(document).ready(function () {
@@ -35,10 +36,10 @@ function RenderVideoPage() {
             switch (VideoAvailable) {
                 case (true): $window.on('scroll', function () {
                     console.log(VideoAvailable)
-                    $videoWrap.height('auto');
+
                     $video.removeClass('stuck');
                     $cancelButton.removeClass('stuck')
-                    $cancelButton.addClass('none')
+
 
                 });
                     break;
@@ -50,7 +51,7 @@ function RenderVideoPage() {
                     if (windowScrollTop > $('.video-wrap').offset().top) {
                         setVideoSeen(1)
                     }
-                    if (windowScrollTop > videoBottom && windowScrollTop < (videoBottom + 200)) {
+                    if (windowScrollTop > videoBottom ) {
                         $videoWrap.height(videoHeight);
                         $video.addClass('stuck');
                         $cancelButton.addClass('stuck')
