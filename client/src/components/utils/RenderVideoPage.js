@@ -31,6 +31,7 @@ function RenderVideoPage() {
             switch(VideoAvailable){
                 case(1): $window.on('scroll', function () {
                     setVideoAvailable(1)
+                    $videoWrap.height('auto');
                     $video.removeClass('stuck');
                     $cancelButton.removeClass('stuck')
                     $cancelButton.addClass('none')
