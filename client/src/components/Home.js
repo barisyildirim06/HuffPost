@@ -89,13 +89,13 @@ function Home() {
                 <div className="container">
                 <div className="column col-8 col-s-12 left1">
                     
-                    <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}>
+                    {/* <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}>
 
                         <SearchFeature
                             refreshFunction={updateSearchTerms}
                         />
 
-                    </div>
+                    </div> */}
                     <div>
                         <RenderFirstPost
                             Products={Products}
