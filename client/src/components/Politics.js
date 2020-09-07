@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import Axios from 'axios';
 import RenderNews from './utils/RenderNews'
 import Title from './Title'
+import Footer from "./Footer"
 
 function Politics() {
 
@@ -15,10 +16,11 @@ function Politics() {
         { _id: 6, name: "SHOPIPING" }
     ]
 
+    const [Suspense, setSuspense] = useState(0)
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
     const [PostSize, setPostSize] = useState()
-    const filters=({"categories" : 2})
+    const filters = ({ "categories": 2 })
     const Limit = 10
 
     useEffect(() => {
@@ -42,6 +44,7 @@ function Politics() {
                     } else {
                         setProducts(response.data.products)
                     }
+                    setSuspense(1)
                     setPostSize(response.data.postSize)
                 } else {
                     alert('Failed to fectch product datas')
@@ -69,29 +72,35 @@ function Politics() {
     }
 
     return (
+        <div>
+            {!Suspense ? null : <div>
+                <div className="container">
+                    <div className="column col-8 col-s-12 left1">
+                        <h4><Title title="POLITICS" /></h4>
+                        <div >
+                            <RenderNews
+                                Products={Products}
+                                X={0}
+                                Y={100}
+                                categories={categories}
+                            />
+                        </div>
+                        <br />
+                        <br />
+                        {PostSize >= Limit &&
+                            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                                <button className="load-more-button load-more-button-border" onClick={onLoadMore}><b>Load More Articles</b></button>
+                            </div>
+                        }
+                        <br />
+                        <br />
+                    </div>
+                </div>
+                <Footer />
+            </div>}
 
-        <div className="container">
-            <div className="column col-8 col-s-12 left1">
-                <h4><Title title="POLITICS" /></h4>
-                <div >
-                    <RenderNews
-                        Products={Products}
-                        X={0}
-                        Y={100}
-                        categories={categories}
-                    />
-                </div>
-                <br />
-                <br />
-                {PostSize >= Limit &&
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <button className="load-more-button load-more-button-border" onClick={onLoadMore}><b>Load More Articles</b></button>
-                </div>
-                 }
-                <br />
-                <br />
-            </div>
         </div>
+
     )
 }
 

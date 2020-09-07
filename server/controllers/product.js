@@ -50,17 +50,18 @@ module.exports = {
         let skip = parseInt(req.body.skip)
 
         let findArgs = {};
-        console.log("findArgs",findArgs)
+        let term = req.body.searchTerm;
+        console.log(term)
         findArgs=req.body.filters
         // for (let key in req.body.filters) {
         //     if (req.body.filters[key].length > 0) {
         //             findArgs[key] = req.body.filters[key]  
         //     }
         // }
-        console.log("findArgs",findArgs)
-        console.log(limit)
 
-        Product.find(findArgs)
+        if(term) {
+            Product.find(findArgs)
+            .find({ $text: { $search: term } })
             .populate("writer")
             .sort([[sortBy, order]])
             .skip(skip)
@@ -69,6 +70,19 @@ module.exports = {
                 if (err) return res.status(400).json({ success: false, err })
                 res.status(200).json({ success: true, products, postSize: products.length })
             })
+        } else {
+            Product.find(findArgs)
+            .populate("writer")
+            .sort([[sortBy, order]])
+            .skip(skip)
+            .limit(limit)
+            .exec((err, products) => {
+                if (err) return res.status(400).json({ success: false, err })
+                res.status(200).json({ success: true, products, postSize: products.length })
+            })
+        }
+
+        
 
     },
 

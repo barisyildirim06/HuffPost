@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { Link } from 'react-router-dom'
+import Footer from './Footer'
 
 // const Categories = [
 //     { key: 1, value: "U.S. NEWS" },
@@ -13,7 +14,7 @@ import { Link } from 'react-router-dom'
 // ]
 
 function DetailProductPage(props) {
-
+    const [Suspense, setSuspense] = useState(0)
     const [Product, setProduct] = useState([])
 
     useEffect(() => {
@@ -21,19 +22,28 @@ function DetailProductPage(props) {
         Axios.get(`/api/product/products_by_id?id=${productId}&type=single`)
             .then(response => {
                 setProduct(response.data[0])
+                setSuspense(1)
             })
 
     }, [])
 
     return (
-        <div className="container">
-            <div className="column left col-8 col-s-12 left1 img-full">
-                <Link to="/"><img src={`../${Product.imageshorizontal}`} alt={Product.imageshorizontal} /></Link>
-                <br />
-                <h6><b>{Product.title}</b></h6>
-                <h6><b>{Product.description}</b></h6>
-            </div>
+        <div>
+            {!Suspense ? null :
+                <div>
+                    <div className="container">
+                        <div className="column left col-8 col-s-12 left1 img-full">
+                            <Link to="/"><img src={`../${Product.imageshorizontal}`} alt={Product.imageshorizontal} /></Link>
+                            <br />
+                            <h6><b>{Product.title}</b></h6>
+                            <h6><b>{Product.description}</b></h6>
+                        </div>
+                    </div>
+                    <Footer />
+                </div>
+            }
         </div>
+
     )
 }
 

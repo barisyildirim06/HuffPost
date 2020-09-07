@@ -6,11 +6,11 @@ import Auth from "./hoc/auth";
 import Home from "./components/Home.js";
 import News from "./components/News.js";
 import Politics from './components/Politics.js';
-import DetailProductPage from "./components/DetailProductPage/DetailProductPage"
+import DetailProductPage from "./components/DetailProductPage"
 import LoginPage from "./components/LoginPage.js";
 import RegisterPage from "./components/RegisterPage.js";
 import NavBar from "./components/NavBar";
-import Footer from "./components/Footer"
+
 import UploadProductPage from './components/UploadProductPage';
 
 
@@ -31,7 +31,6 @@ function App() {
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
         </Switch>
-      <Footer />
     </Suspense>
   );
 }
