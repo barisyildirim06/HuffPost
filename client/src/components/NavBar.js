@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import logo from "../images/huffpost.png";
-import { FaAlignJustify } from "react-icons/fa";
-import { FiSearch } from "react-icons/fi";
-import React from 'react';
+
+import React, { useState } from 'react';
+import SearchFeature from './utils/SearchFeature'
 import { withRouter } from 'react-router-dom';
 
 import axios from 'axios';
@@ -11,6 +11,8 @@ import { useSelector } from "react-redux";
 
 function Navbar(props) {
 
+    const [SearchTerm, setSearchTerm] = useState("")
+   
     const user = useSelector(state => state.user)
     const logoutHandler = () => {
         axios.get(`${USER_SERVER}/logout`).then(response => {
@@ -21,6 +23,9 @@ function Navbar(props) {
             }
         });
     };
+
+    
+
     window.onscroll = function () { scrollFunction() };
 
     function scrollFunction() {
@@ -32,6 +37,12 @@ function Navbar(props) {
             document.getElementById("nav-logo2").style.display = "none";
         }
     }
+
+    const updateSearchTerms = (newSearchTerm) => {
+        setSearchTerm(newSearchTerm)
+
+    }
+
     return (
         <nav id="navbar">
             <div className="nav-center">
@@ -58,29 +69,23 @@ function Navbar(props) {
                         </li>
                     </ul>}
             </div>
-            <button
-                type="button"
-                className="nav-button"
-            >
-                <FaAlignJustify className="nav-icon" />
-            </button>
-            <button
-                style={{ marginLeft: "20px" }}
-                type="button"
-                className="nav-button"
-            >
-                <FiSearch className="nav-icon" />
-            </button>
+            
+            <SearchFeature
+                            refreshFunction={updateSearchTerms}
+                            
+                        />
+
+
 
             <div >
                 <hr className="hide" />
                 <div className="navlogotohide">
-                        <Link to="/">
-                            <img src={logo} id="nav-logo2"  alt="HUFFPOST" />
-                        </Link>
-                    </div>
-                <ul className="nav-links">
-                    
+                    <Link to="/">
+                        <img src={logo} id="nav-logo2" alt="HUFFPOST" />
+                    </Link>
+                </div>
+                <ul className="nav-links nav-links2">
+
                     <li>
                         <Link to="/news">NEWS</Link>
                     </li>

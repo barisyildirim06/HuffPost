@@ -76,6 +76,10 @@ h6.thick {
   text-shadow: 0px 1px, 1px 0px, 1px 0px;
 }
 
+::placeholder{
+  color: white;
+}
+
 .btn-primary {
   display: inline-block;
   text-decoration: none;
@@ -156,13 +160,6 @@ h6.thick {
   cursor: pointer;
   outline: none;
 }
-/* .nav-login {
-    text-align: right;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-  } */
 .nav-btn {
   background: transparent;
   border: none;
@@ -181,9 +178,11 @@ h6.thick {
 .nav-links {
   /* height: 0;
     overflow: hidden; */
-  justify-content: center;
   transition: var(--mainTransition);
   list-style-type: none;
+}
+.nav-links2{
+  justify-content: center;
 }
 .nav-links a {
   display: block;
@@ -963,5 +962,41 @@ h4.ıtspersonalmain {
   grid-gap: 20px;
 }
 /* Row end */
+/* Search box start */
+.searchbox{margin-bottom: 5px;}
+.searchinput{
+  background-color: #282828;
+  font-size: 14px;
+  color: white;
+  font-style: "normal";
+  font-family: sans-serif;
+  font-weight: 400;
+  height: 25px;
+  border-radius: 10px;
+  padding-left: 40px;
+  width: 250px;
+}
 
+.input-icon-search{
+  position: absolute;
+  left: 135px;
+  bottom: 42px;
+  margin: auto;
+  color: white;
+  font-size: 1.5em;
+}
+
+.input-icon-cancel{
+  position: absolute;
+  left: 350px;
+  bottom: 41px;
+  margin: auto;
+  color:white;
+
+  font-size: 1.5em;
+  border-radius: 100%;
+  background-color: transparent;
+}
+
+/* Search box end */
 
