@@ -194,7 +194,7 @@ function Navbar(props) {
                                 </ul>}
                         </div>
                         <button
-                            style={{ marginLeft: "25px" }}
+                            style={{ marginLeft: "24px" }}
                             type="button"
                             className="nav-button"
                         >
