@@ -36,8 +36,9 @@ function SearchFeature(props) {
   
 
     return (
-        <div className="nav-left">
+        <div className="nav-links nav-left">
             <button
+            style={{ marginLeft: "25px" }}
                 type="button"
                 className="nav-button"
             >
@@ -45,7 +46,7 @@ function SearchFeature(props) {
             </button>
             {
                 !SearchClicked ? <button
-                    style={{ marginLeft: "20px", height:"30px" }}
+                    style={{ marginLeft: "20px" }}
                     type="button"
                     className="nav-button"
                     onClick={SearchCheck}

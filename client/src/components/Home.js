@@ -11,8 +11,7 @@ import RenderWhatsHappening from './utils/RenderWhatsHappening'
 import RenderPersonalNews from './utils/RenderPersonalNews'
 import RenderLife from './utils/RenderLife'
 import RenderLatestPhone from './utils/RenderLatestPhone'
-import SearchFeature from './utils/SearchFeature'
-import Footer from "./Footer"
+
 import Title from './Title'
 import { useMediaQuery } from 'react-responsive'
 
@@ -28,7 +27,7 @@ function Home() {
         { _id: 6, name: "SHOPIPING" }
     ]
 
-    const [Ses, setSes] = useState(0)
+    const [isLoaded, setIsLoaded] = useState(0)
     const [Products, setProducts] = useState([])
     const [SearchTerms, setSearchTerms] = useState("")
     const isBigEnough = useMediaQuery({
@@ -46,7 +45,7 @@ function Home() {
         Axios.post('/api/product/getProducts' , variables)
         .then(response => {
             if (response.data.success) {
-                setSes(1)
+                setIsLoaded(1)
                 setProducts(response.data.products)
             } else {
                 alert('Failed to fectch product datas')
@@ -84,18 +83,10 @@ function Home() {
     return (
         
         <div>
-            {Ses === 0 ? <div className="container"></div> : 
+            {isLoaded === 0 ? <div className="container"></div> : 
             <div>
                 <div className="container">
                 <div className="column col-8 col-s-12 left1">
-                    
-                    {/* <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}>
-
-                        <SearchFeature
-                            refreshFunction={updateSearchTerms}
-                        />
-
-                    </div> */}
                     <div>
                         <RenderFirstPost
                             Products={Products}
