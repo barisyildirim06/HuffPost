@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../images/huffpost.png";
+import logo2 from "../images/logo2.png"
 
 import React, { useState } from 'react';
 import SearchFeature from './utils/SearchFeature'
@@ -84,8 +85,7 @@ function Navbar(props) {
                         <img src={logo} id="nav-logo2" alt="HUFFPOST" />
                     </Link>
                 </div>
-                <ul className="nav-links nav-links2">
-
+                <ul className="nav-links">
                     <li id="news">
                         <Link to="/news">NEWS</Link>
                     </li>
@@ -96,7 +96,7 @@ function Navbar(props) {
                         <Link to="/news/politics">POLITICS</Link>
                     </li>
                     <li>
-                        <Link to="/">2020 ELECTIONS</Link>
+                        <Link to="/">ELECTIONS</Link>
                     </li>
                     <li>
                         <Link to="/">ENTERTAINMENT</Link>

@@ -36,7 +36,7 @@ function SearchFeature(props) {
   
 
     return (
-        <div className="nav-links nav-left">
+        <div className="nav-left">
             <button
                 type="button"
                 className="nav-button"
