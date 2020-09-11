@@ -84,7 +84,7 @@ function Home() {
     return (
         
         <div>
-            {Ses === 0 ? null : 
+            {Ses === 0 ? <div className="container"></div> : 
             <div>
                 <div className="container">
                 <div className="column col-8 col-s-12 left1">
@@ -346,7 +346,6 @@ function Home() {
 
                 </div>
             </div>
-            <Footer />
             </div> }
             
 

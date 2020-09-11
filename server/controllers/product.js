@@ -50,7 +50,8 @@ module.exports = {
         let skip = parseInt(req.body.skip)
 
         let findArgs = {};
-        let term = req.body.searchTerm;
+        let term = req.body.searchTerms;
+
         console.log(term)
         findArgs=req.body.filters
         // for (let key in req.body.filters) {

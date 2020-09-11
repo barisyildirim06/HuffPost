@@ -73,7 +73,7 @@ function Politics() {
 
     return (
         <div>
-            {!Suspense ? null : <div>
+            {!Suspense ? <div className="container"></div> : <div>
                 <div className="container">
                     <div className="column col-8 col-s-12 left1">
                         <h4><Title title="POLITICS" /></h4>
@@ -96,7 +96,6 @@ function Politics() {
                         <br />
                     </div>
                 </div>
-                <Footer />
             </div>}
 
         </div>

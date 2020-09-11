@@ -29,7 +29,7 @@ function DetailProductPage(props) {
 
     return (
         <div>
-            {!Suspense ? null :
+            {!Suspense ? <div className="container"></div> :
                 <div>
                     <div className="container">
                         <div className="column left col-8 col-s-12 left1 img-full">
@@ -39,7 +39,6 @@ function DetailProductPage(props) {
                             <h6><b>{Product.description}</b></h6>
                         </div>
                     </div>
-                    <Footer />
                 </div>
             }
         </div>

@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 
 function Navbar(props) {
 
-    const [SearchTerm, setSearchTerm] = useState("")
+    const [searchTerm, setSearchTerm] = useState("")
    
     const user = useSelector(state => state.user)
     const logoutHandler = () => {
@@ -30,7 +30,7 @@ function Navbar(props) {
 
     function scrollFunction() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("navbar").style.top = "-43px";
+            document.getElementById("navbar").style.top = "-45px";
             document.getElementById("nav-logo2").style.display = "flex";
         } else {
             document.getElementById("navbar").style.top = "0px";
@@ -40,8 +40,9 @@ function Navbar(props) {
 
     const updateSearchTerms = (newSearchTerm) => {
         setSearchTerm(newSearchTerm)
-
     }
+
+    
 
     return (
         <nav id="navbar">
@@ -53,7 +54,7 @@ function Navbar(props) {
             <div className="nav-login">
                 {user.userData && !user.userData.isAuth ? <ul className="nav-links">
                     <li>
-                        <Link to="/login">Signin</Link>
+                        <Link to="/login" >Signin</Link>
                     </li>
                     <li>
                         <Link to="/register">Signup</Link>
@@ -70,9 +71,8 @@ function Navbar(props) {
                     </ul>}
             </div>
             
-            <SearchFeature
-                            refreshFunction={updateSearchTerms}
-                            
+            <SearchFeature 
+                            refreshFunction={updateSearchTerms}    
                         />
 
 
@@ -86,7 +86,7 @@ function Navbar(props) {
                 </div>
                 <ul className="nav-links nav-links2">
 
-                    <li>
+                    <li id="news">
                         <Link to="/news">NEWS</Link>
                     </li>
                     <li>

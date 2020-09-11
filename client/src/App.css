@@ -113,6 +113,9 @@ h6.thick {
   padding: 1rem;
   letter-spacing: var(--mainSpacing);
 }
+.hidden{
+  display: none;
+}
 /* end of globals */
 /* start of navbar */
 #navbar {
@@ -225,33 +228,11 @@ h6.thick {
 }
 /* end of navbar */
 
-/* Start of Img container */
+/* Start of Img  */
 .img-full img {
   width: 100%;
 }
-.img-container {
-  max-width: 100%;
-  position: relative;
-  margin-right: 15rem;
-}
-.img-container img {
-  width: 100%;
-  display: block;
-  transition: var(--mainTransition);
-}
-.img-container:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-.img-container:hover img {
-  opacity: 0.3;
-}
-.img-container:hover .price-top {
-  opacity: 0;
-}
-.img-container:hover .room-link {
-  transform: translate(-50%, -50%) scale(1);
-}
-/* end of img container*/
+/* end of img */
 
 /* Start of Column */
 .column {
@@ -454,6 +435,7 @@ h6.thick {
 /* start of Responsive design */
 /* Start of container */
 .container {
+  min-height: calc(100vh - 82px);
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;

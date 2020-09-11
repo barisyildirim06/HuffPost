@@ -1,10 +1,13 @@
+
+import { connect } from 'react-redux'
+
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import RenderNews from './utils/RenderNews'
 import Title from './Title'
-import Footer from './Footer'
 
-function News() {
+
+function SearchPage(props) {
 
     const categories = [
         { _id: 0, name: "U.S. NEWS" },
@@ -20,23 +23,26 @@ function News() {
     const [Skip, setSkip] = useState(0)
     const [PostSize, setPostSize] = useState()
     const Limit = 10
-
+    const searchTerms= props.match.params.searchTerms;
 
     useEffect(() => {
-
         const variables = {
             skip: Skip,
             limit: Limit,
+            searchTerms: searchTerms
         }
 
         getProducts(variables)
 
+        
+
     }, [])
 
     const getProducts = (variables) => {
-        Axios.post('/api/product/getProducts', variables)
+        Axios.post(`/api/product/getProducts?searchTerms=${searchTerms}&type=single`, variables)
             .then(response => {
                 if (response.data.success) {
+                    
                     if (variables.loadMore) {
                         setProducts([...Products, ...response.data.products])
                     } else {
@@ -44,6 +50,7 @@ function News() {
                     }
                     setSuspense(1)
                     setPostSize(response.data.postSize)
+                    console.log(PostSize)
                 } else {
                     alert('Failed to fectch product datas')
                 }
@@ -57,10 +64,14 @@ function News() {
             skip: skip,
             limit: Limit,
             loadMore: true,
+            searchTerm: props.searchTerms
         }
         getProducts(variables)
         setSkip(skip)
     }
+
+    const titleWithPost = `Posts Related With "${searchTerms}"`
+    const titleWithoutPost = `There is no Post Related With "${searchTerms}"`
 
     return (
         <div>
@@ -68,7 +79,8 @@ function News() {
                 <div>
                     <div className="container">
                         <div className="column col-8 col-s-12 left1">
-                            <h4><Title title="LATEST NEWS" /></h4>
+                        {PostSize > 0 ? <section>
+                            <h4><Title title={titleWithPost} /></h4>
                             <div >
                                 <RenderNews
                                     Products={Products}
@@ -86,6 +98,11 @@ function News() {
                             }
                             <br />
                             <br />
+                        </section> : 
+                        <section className="container">
+                            <h4><Title title={titleWithoutPost} /></h4>
+                        </section>}
+                            
                         </div>
                     </div>
                 </div>
@@ -98,4 +115,12 @@ function News() {
 }
 
 
-export default News;
+const mapStateToProps = (state) => {
+    return {
+        searchTerms: state.searchTerms
+    }
+}
+
+
+export default connect(mapStateToProps)(SearchPage)
+
