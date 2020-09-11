@@ -95,7 +95,7 @@ function Navbar(props) {
                         <div id="navlogotohide"
                         >
                             <button
-                                style={{ marginLeft: "25px", paddingTop:"5px"}}
+                                style={{ marginLeft: "25px", paddingTop: "5px" }}
                                 type="button"
                                 className="nav-button"
                             >
@@ -193,9 +193,13 @@ function Navbar(props) {
                                     </li>
                                 </ul>}
                         </div>
-                        <SearchFeature
-                            refreshFunction={updateSearchTerms}
-                        />
+                        <button
+                            style={{ marginLeft: "25px" }}
+                            type="button"
+                            className="nav-button"
+                        >
+                            <FaAlignJustify className="nav-icon" />
+                        </button>
                     </nav>
             }
         </section>

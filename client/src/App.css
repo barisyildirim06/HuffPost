@@ -143,6 +143,7 @@ h6.thick {
   z-index: -1;
 }
 .nav-logo {
+  margin-top: 7px;
   height: 18px;
   position: absolute;
 }
