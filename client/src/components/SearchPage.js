@@ -22,7 +22,7 @@ function SearchPage(props) {
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
     const [PostSize, setPostSize] = useState()
-    const Limit = 10
+    const Limit = 100
     const searchTerms= props.match.params.searchTerms;
 
     useEffect(() => {
@@ -64,7 +64,7 @@ function SearchPage(props) {
             skip: skip,
             limit: Limit,
             loadMore: true,
-            searchTerm: props.searchTerms
+            searchTerm: searchTerms
         }
         getProducts(variables)
         setSkip(skip)
