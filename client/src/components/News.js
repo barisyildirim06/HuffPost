@@ -72,7 +72,7 @@ function News() {
                             <div >
                                 <RenderNews
                                     Products={Products}
-                                    X={1}
+                                    X={0}
                                     Y={100}
                                     categories={categories}
                                 />
