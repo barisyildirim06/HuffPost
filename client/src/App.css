@@ -743,7 +743,9 @@ textarea {
   display: flex;
   transition: var(--mainTransition);
   text-align: left;
-  font-size: 1.2rem;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 27px;
   padding-left: 20px;
 }
 

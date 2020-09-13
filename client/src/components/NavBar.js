@@ -79,7 +79,7 @@ function Navbar(props) {
                             :
                             <ul className="nav-links ">
                                 <li>
-                                    <Link to="/uploadpost">Upload Post</Link>
+                                    <Link to="/uploadpost">Upload</Link>
                                 </li>
                                 <li>
                                     <Link onClick={logoutHandler}>Logout</Link>

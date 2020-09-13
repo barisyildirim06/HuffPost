@@ -25,7 +25,7 @@ function Footer() {
         displayWindowSize()
     })
 
-    const logos = isBigEnough || isCellPhone ? logo : logo2;
+    const logos = (isBigEnough || isCellPhone) ? logo : logo2;
     window.onresize = function () { displayWindowSize() }
     function displayWindowSize() {
         function resizeSublinks10() {
