@@ -45,10 +45,10 @@ function Navbar(props) {
     window.onscroll = function () { scrollFunction() };
 
     function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 && isComputer) {
+        if ((document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) && isComputer) {
             document.getElementById("navbar").style.top = "-41px";
             document.getElementById("navlogotohide").style.display = "flex";
-        } else if (document.body.scrollTop <= 20 && document.documentElement.scrollTop <= 20 && isComputer) {
+        } else if ((document.body.scrollTop <= 20 && document.documentElement.scrollTop <= 20) && isComputer) {
             document.getElementById("navbar").style.top = "0px";
             document.getElementById("navlogotohide").style.display = "none";
         }
@@ -79,7 +79,7 @@ function Navbar(props) {
                             :
                             <ul className="nav-links ">
                                 <li>
-                                    <Link to="/uploadpost">Upload</Link>
+                                    <Link to="/uploadpost">Upload Post</Link>
                                 </li>
                                 <li>
                                     <Link onClick={logoutHandler}>Logout</Link>
@@ -156,7 +156,7 @@ function Navbar(props) {
                                 :
                                 <ul className="nav-links ">
                                     <li>
-                                        <Link to="/uploadpost">Upload Post</Link>
+                                        <Link to="/uploadpost">Upload</Link>
                                     </li>
                                     <li>
                                         <Link onClick={logoutHandler}>Logout</Link>
@@ -186,7 +186,7 @@ function Navbar(props) {
                                 :
                                 <ul className="nav-links ">
                                     <li>
-                                        <Link to="/uploadpost">Upload Post</Link>
+                                        <Link to="/uploadpost">Upload</Link>
                                     </li>
                                     <li>
                                         <Link onClick={logoutHandler}>Logout</Link>
