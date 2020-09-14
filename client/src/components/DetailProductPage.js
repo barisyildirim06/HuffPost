@@ -34,8 +34,6 @@ function DetailProductPage(props) {
                     <div className="container">
                     <h1><b>{Product.title}</b></h1>
                         <div className="column left col-8 col-s-12 left1 img-full">
-                            
-                            <h6><b>{Product.createdAt}</b></h6>
                             <Link to="/"><img src={`../${Product.imageshorizontal}`} alt={Product.imageshorizontal} /></Link>
                             <br />
                             <h6><b>{Product.description}</b></h6>
