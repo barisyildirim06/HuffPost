@@ -951,3 +951,27 @@ h4.ıtspersonalmain {
 }
 
 /* Search box end */
+/* Sign box start*/
+.signcard{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 365px;
+  margin: auto;
+  text-align: center;
+}
+/* Full-width input fields */
+.sign-input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Add a background color when the inputs get focus */
+.sign-input:focus {
+  background-color: #ddd;
+  outline: none;
+}
+/* Sign box end */
