@@ -28,6 +28,11 @@ npm run dev
 
 ### For Questions
 ```
+See Live:
+https://huffpostclone.herokuapp.com
+```
+### For Questions
+```
 Linkedin Account:
 https://www.linkedin.com/in/barış-yıldırım-933375194
 ```
