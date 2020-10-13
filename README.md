@@ -4,8 +4,9 @@
 ```
 1. create dev.js file inside of "./server/config" folder
 2. place in mongoDB information into dev.js file 
-3. Type  " npm install " inside the "./server" directory  to download Server dependencies
-4. Type " npm install " inside the "./client" directory to download Client dependencies
+3. create "./uploads" folder to main directory
+4. Type  " npm install " inside the "./server" directory  to download Server dependencies
+5. Type " npm install " inside the "./client" directory to download Client dependencies
 ```
 
 ### Compiles and hot-reloads for development
