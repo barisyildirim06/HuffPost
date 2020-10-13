@@ -131,6 +131,7 @@ h6.thick {
   padding: 0.5rem 0rem;
   z-index: 1;
   max-height: 75px;
+  transition-duration: 0.5s;
 }
 
 .navbar-absolute {
@@ -169,6 +170,9 @@ h6.thick {
   cursor: pointer;
   outline: none;
 }
+.nav-button :hover {
+  color:#0dbe98;
+}
 
 .nav-icon {
   text-align: left;
@@ -182,6 +186,7 @@ h6.thick {
 .nav-links {
   /* height: 0;
     overflow: hidden; */
+    background-color: blue;
   display: flex;
   transition: var(--mainTransition);
   list-style-type: none;
@@ -204,6 +209,32 @@ h6.thick {
 .nav-links a:hover {
   color: var(--mainWhite);
   text-decoration: underline;
+}
+.nav-sign {
+  /* height: 0;
+    overflow: hidden; */
+  display: flex;
+  transition: var(--mainTransition);
+  list-style-type: none;
+}
+
+.nav-sign a {
+  display: block;
+  text-decoration: none;
+  padding: 1rem 0;
+  color: var(--mainWhite);
+  transition: var(--mainTransition);
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0px;
+  margin: 0 0.5rem;
+  padding: 0rem 0;
+  padding-top: 0.5rem;
+}
+.nav-sign a:hover {
+  color: #0cbd8c;
+  text-decoration: none;
 }
 .nav-center {
   max-width: 140px;
@@ -445,7 +476,6 @@ h6.thick {
   .right {padding-left: 0px;}
   .hide {display: none;}
   .lifebox {column-count: 1;}
-  .featured {column-count: 1;}
   .bottompart {column-count: 1;}
   .lifebox2 {height: fit-content;}
   .container {width: 100%;}
@@ -470,7 +500,6 @@ h6.thick {
   .hide {display: none;}
   .lifebox2 {height: 420px;}
   .lifebox {column-count: 2;}
-  .featured {column-count: 2;}
   .bottompart {column-count: 4;}
   .container {width: 770px;}
   .padding30px2 {padding-bottom: 0px;}
@@ -487,7 +516,6 @@ h6.thick {
   .container {width: 100%;}
   .lifebox2 {height: 420px;}
   .lifebox {column-count: 2;}
-  .featured {column-count: 2;}
   .bottompart {column-count: 4;}
   .padding30px2 {padding-bottom: 0px;}
   h4.ıtspersonalmain {padding-left: 100px; padding-right: 100px;}
@@ -513,7 +541,6 @@ h6.thick {
   .videos {width: 1188px;}
   .lifebox2 {height: 420px;}
   .lifebox {column-count: 2;}
-  .featured {column-count: 2;}
   .bottompart {column-count: 4;}
   .padding30px2 {padding-bottom: 0px;}
   h4.ıtspersonalmain {padding-left: 410px; padding-right: 410px;}
@@ -649,6 +676,16 @@ textarea {
 .featured {
   height: fit-content;
   column-gap: 30px;
+  margin-bottom: 20px;
+}
+.featured2{
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 47.8% 47.8%;
+  grid-gap: 30px;
+  text-align: center;
+  float: left;
+  padding-bottom: 10px;
   margin-bottom: 20px;
 }
 
@@ -975,3 +1012,89 @@ h4.ıtspersonalmain {
   outline: none;
 }
 /* Sign box end */
+/* Side Navbar start */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  background-color: black;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 80px;
+  text-align: left;
+  transition-duration: 0.5s;
+}
+
+.sidenav a{
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.sidenav li{
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav li:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.sidenav-header{
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 700;
+  font-size: 16px;
+  padding-top: 20px;
+}
+
+.sidenav-main{
+  column-count: 2;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 19px;
+}
+
+
+.sidenav .closebtn {
+  position: absolute;
+  padding-left: 20px;
+  top: 0;
+  left: 0px;
+  font-size: 36px;
+  color: #ffffff;
+
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+#mySidenav {
+  width: 0px;
+  
+}
+#marginLeft{
+  margin-left: 0px;
+  transition-duration: 0.5s;
+}
+
+
+/* Sidenavbar end */

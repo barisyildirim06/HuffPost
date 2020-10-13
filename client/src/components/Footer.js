@@ -23,7 +23,7 @@ function Footer() {
 
     useEffect(() => {
         displayWindowSize()
-    })
+    }, [])
 
     const logos = (isBigEnough || isCellPhone) ? logo : logo2;
     window.onresize = function () { displayWindowSize() }
@@ -95,33 +95,33 @@ function Footer() {
                         <div >
                             <ul className="footer-links item2">
                                 <li>
-                                    <Link to="/">NEWS</Link>
+                                    <Link to="/news">NEWS</Link>
                                 </li>
                                 <li>
-                                    <Link to="/">POLITICS</Link>
+                                    <Link to="/news/politics">POLITICS</Link>
                                 </li>
                                 <li>
-                                    <Link to="/">ENTERTAINMENT</Link>
+                                    <Link to="/news/entertainment">ENTERTAINMENT</Link>
                                 </li>
                                 <li>
-                                    <Link to="/">LIFE</Link>
+                                    <Link to="/news/life">LIFE</Link>
                                 </li>
                             </ul>
                         </div>
                         <div >
                             <ul className="footer-links item3">
                                 <li>
-                                    <Link to="/">COMMUNITIES</Link>
+                                    <Link to="/news/communities">COMMUNITIES</Link>
                                 </li>
-                                <li>
-                                    <Link to="/">HUFFPOST PERSONAL</Link>
-                                </li>
-                                <li>
-                                    <Link to="/">VIDEO</Link>
-                                </li>
-                                <li>
-                                    <Link to="/">NEWSLETTERS</Link>
-                                </li>
+                                <a href="/search/Huffpost Personal">
+                                    HUFFPOST PERSONAL
+                                </a>
+                                <a href="/search/video">
+                                    VIDEO
+                                </a>
+                                <a href="/search/Newsletters">
+                                   NEWSLETTERS
+                                </a>
                             </ul>
                         </div>
                         {isTablet ? <div >

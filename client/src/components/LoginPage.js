@@ -77,15 +77,17 @@ function LoginPage(props) {
           handleSubmit
         } = props;
         return (
-          <div className="app">
+          <div className="container">
+            <div className="signcard">
 
             <Title level={2}>Log In</Title>
             <form onSubmit={handleSubmit} style={{ width: '350px' }}>
 
               <Form.Item required>
                 <Input
+                style={{width:"300px", paddingLeft:"15px"}}
                   id="email"
-                  prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                  prefix={<Icon type="user" style={{paddingLeft:"15px", color: 'rgba(0,0,0,.25)' }} />}
                   placeholder="Enter your email"
                   type="email"
                   value={values.email}
@@ -102,8 +104,9 @@ function LoginPage(props) {
 
               <Form.Item required>
                 <Input
+                style={{width:"300px", paddingLeft:"15px"}}
                   id="password"
-                  prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                  prefix={<Icon type="lock" style={{paddingLeft:"15px", color: 'rgba(0,0,0,.25)' }} />}
                   placeholder="Enter your password"
                   type="password"
                   value={values.password}
@@ -128,7 +131,7 @@ function LoginPage(props) {
                   forgot password
                   </a>
                 <div>
-                  <Button type="primary" htmlType="submit" className="login-form-button" style={{ minWidth: '100%' }} disabled={isSubmitting} onSubmit={handleSubmit}>
+                  <Button  type="primary" htmlType="submit" className="login-form-button" style={{ width: '300px' }} disabled={isSubmitting} onSubmit={handleSubmit}>
                     Log in
                 </Button>
                 </div>
@@ -136,6 +139,7 @@ function LoginPage(props) {
               </Form.Item>
             </form>
           </div>
+        </div>
         );
       }}
     </Formik>

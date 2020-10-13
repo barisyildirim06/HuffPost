@@ -1,14 +1,20 @@
-Hello, My Friends  
-Thank you for having interest in this repository ! 
+# nexusproject
 
-To use this application, 
+## Project setup
+```
+1. create dev.js file inside of "./server/config" folder
+2. place in mongoDB information into dev.js file 
+3. Type  " npm install " inside the "./server" directory  to download Server dependencies
+4. Type " npm install " inside the "./client" directory to download Client dependencies
+```
 
-1. make dev.js file inside config folder 
-2. put mongoDB info into dev.js file 
-3. Type  " npm install " inside the root directory  ( Download Server Dependencies ) 
-4. Type " npm install " inside the client directory ( Download Front-end Dependencies )
+### Compiles and hot-reloads for development
+```
+npm run dev
+```
 
-
+### Scripts
+```
 "scripts": {
     "start": "node server/index.js",
     "backend": "nodemon server/index.js",
@@ -17,11 +23,19 @@ To use this application,
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   }
+```
 
-If you have problem, feel free to ask me ^^ 
+### Main Component
+```
+Necessary code is inside of './src/App.vue' directory
+```
 
-You can watch the tutorial for this app.
-
-https://www.youtube.com/channel/UCFyXA9x8lpL3EYWeYhj4C4Q?view_as=subscriber
-
-
+### For Questions
+```
+Linkedin Account:
+https://www.linkedin.com/in/barış-yıldırım-933375194
+```
+```
+Gmail Account:
+yildrmbaris@gmail.com
+```

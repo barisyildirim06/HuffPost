@@ -2,18 +2,20 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import RenderNews from './utils/RenderNews'
 import Title from './Title'
-import Footer from './Footer'
+
 
 function News() {
 
     const categories = [
-        { _id: 0, name: "U.S. NEWS" },
-        { _id: 1, name: "CORONAVIRUS" },
-        { _id: 2, name: "POLITICS" },
-        { _id: 3, name: "ENTERTAINMENT" },
-        { _id: 4, name: "WORLD NEWS" },
-        { _id: 5, name: "LIFE" },
-        { _id: 6, name: "SHOPIPING" }
+        {_id:0, name: "U.S. NEWS"},
+        {_id:1, name:"CORONAVIRUS"},
+        {_id:2, name:"POLITICS"},
+        {_id:3, name:"ENTERTAINMENT"},
+        {_id:4, name:"WORLD NEWS"},
+        {_id:5, name:"LIFE"},
+        {_id:6, name:"SHOPIPING"},
+        {_id:7, name:"IMPACT"},
+        {_id:8, name:"COMMUNITIES"},
     ]
     const [Suspense, setSuspense] = useState(0)
     const [Products, setProducts] = useState([])
@@ -25,8 +27,8 @@ function News() {
     useEffect(() => {
 
         const variables = {
-            skip: Skip,
-            limit: Limit,
+            skip: 0,
+            limit: 10,
         }
 
         getProducts(variables)

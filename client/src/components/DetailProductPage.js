@@ -1,17 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { Link } from 'react-router-dom'
-import Footer from './Footer'
 
-// const Categories = [
-//     { key: 1, value: "U.S. NEWS" },
-//     { key: 2, value: "CORONAVIRUS" },
-//     { key: 3, value: "POLITICS" },
-//     { key: 4, value: "ENTERTAINMENT" },
-//     { key: 5, value: "WORLD NEWS" },
-//     { key: 6, value: "LIFE" },
-//     { key: 7, value: "SHOPIPING" }
-// ]
+
 
 function DetailProductPage(props) {
     const [Suspense, setSuspense] = useState(0)
@@ -25,7 +16,7 @@ function DetailProductPage(props) {
                 setSuspense(1)
             })
 
-    }, [])
+        }, [])
 
     return (
         <div>

@@ -4,6 +4,7 @@ import { FaAlignJustify } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 import { MdClose } from "react-icons/md"
 import $ from "jquery";
+import { useMediaQuery } from 'react-responsive'
 import {
     INPUT_VALUE
 } from '../../_actions/types';
@@ -13,9 +14,9 @@ import {
 function SearchFeature(props) {
     const [searchTerms, setSearchTerms] = useState("")
     const [SearchClicked, setSearchClicked] = useState(false)
-    const onChangeSearch = (event) => {
+    const updateSearchTerms = (event) => {
         setSearchTerms(event.currentTarget.value)
-        
+
         props.refreshFunction(event.currentTarget.value)
 
     }
@@ -24,23 +25,36 @@ function SearchFeature(props) {
     }
 
 
-    $("#myInput").keypress(function(event) { 
-        if (event.keyCode === 13) { 
+    $("#myInput").keypress(function (event) {
+        if (event.keyCode === 13) {
             event.preventDefault()
             window.location.href = "/search/" + props.searchTerms;
-        } 
-    }); 
+        }
+    });
+    
+    const is400px = useMediaQuery({
+        query: '(min-width: 400px)'
+    })
 
-    
-    
-  
+    const openNav = () => {
+        if(is400px){
+            document.getElementById("mySidenav").style.width = "400px"
+            document.getElementById("navbar").style.paddingLeft = "400px"
+            document.getElementById("marginLeft").style.paddingLeft = "400px"
+        }else {
+            document.getElementById("mySidenav").style.width = "100%"
+        }
+    }
+
 
     return (
         <div className="nav-links nav-left">
+            
             <button
-            style={{ marginLeft: "25px" }}
+                style={{ marginLeft: "25px" }}
                 type="button"
                 className="nav-button"
+                onClick={openNav}
             >
                 <FaAlignJustify className="nav-icon" />
             </button>
@@ -80,9 +94,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onChangeSearch: (event) =>{
+        onChangeSearch: (event) => {
             console.log("changed", event.target.value)
-            const action = {type:INPUT_VALUE, payload: event.target.value}
+            const action = { type: INPUT_VALUE, payload: event.target.value }
             dispatch(action)
         }
     }

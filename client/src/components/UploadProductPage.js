@@ -83,9 +83,9 @@ function UploadProductPage(props) {
             
             <Form onSubmit={onSubmit}>
             {/* DropZone */}
-            <label>Vertical</label>
+            <label>1-1 Scale Photograph</label>
             <FileUpload refreshFunction={updateImagesvertical}/>
-            <label>Horizontal</label>
+            <label>16 width-9 height Scale Photograph</label>
             <FileUpload refreshFunction={updateImageshorizontal}/>
             <br />
             <br />

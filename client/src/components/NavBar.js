@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import SearchFeature from './utils/SearchFeature'
 import { withRouter } from 'react-router-dom';
 
+
 import axios from 'axios';
 import { USER_SERVER } from './Config';
 import { useSelector } from "react-redux";
@@ -14,7 +15,6 @@ import { useMediaQuery } from 'react-responsive'
 function Navbar(props) {
 
     const [searchTerm, setSearchTerm] = useState("")
-
     const user = useSelector(state => state.user)
     const logoutHandler = () => {
         axios.get(`${USER_SERVER}/logout`).then(response => {
@@ -37,9 +37,10 @@ function Navbar(props) {
         query: '(min-width: 780px)'
     })
 
-    const isCellPhone = useMediaQuery({
-        query: '(max-width: 780px)'
+    const is400px = useMediaQuery({
+        query: '(min-width: 400px)'
     })
+
 
 
     window.onscroll = function () { scrollFunction() };
@@ -58,8 +59,21 @@ function Navbar(props) {
         setSearchTerm(newSearchTerm)
     }
 
+    const openNav = () => {
+        if(is400px){
+            document.getElementById("mySidenav").style.width = "400px"
+            document.getElementById("navbar").style.paddingLeft = "400px"
+            document.getElementById("marginLeft").style.paddingLeft = "400px"
+        }else {
+            document.getElementById("mySidenav").style.width = "100%"
+        }
+    }
+
+
+
     return (
         <section>
+
             {isComputer ?
                 <nav id="navbar">
                     <div className="nav-center">
@@ -68,7 +82,7 @@ function Navbar(props) {
                         </Link>
                     </div>
                     <div className="nav-login">
-                        {user.userData && !user.userData.isAuth ? <ul className="nav-links">
+                        {user.userData && !user.userData.isAuth ? <ul className="nav-sign">
                             <li>
                                 <Link to="/login" >Signin</Link>
                             </li>
@@ -77,7 +91,7 @@ function Navbar(props) {
                             </li>
                         </ul>
                             :
-                            <ul className="nav-links ">
+                            <ul className="nav-sign ">
                                 <li>
                                     <Link to="/uploadpost">Upload Post</Link>
                                 </li>
@@ -98,6 +112,7 @@ function Navbar(props) {
                                 style={{ marginLeft: "25px", paddingTop: "5px" }}
                                 type="button"
                                 className="nav-button"
+                                onClick={openNav}
                             >
                                 <FaAlignJustify className="nav-icon" />
                             </button>
@@ -110,28 +125,28 @@ function Navbar(props) {
                                 <Link to="/news">NEWS</Link>
                             </li>
                             <li>
-                                <Link to="/">CORONAVIRUS</Link>
+                                <Link to="/news/coronavirus">CORONAVIRUS</Link>
                             </li>
                             <li>
                                 <Link to="/news/politics">POLITICS</Link>
                             </li>
                             <li>
-                                <Link to="/">ELECTIONS</Link>
+                                <Link to="/news/entertainment">ENTERTAINMENT</Link>
                             </li>
                             <li>
-                                <Link to="/">ENTERTAINMENT</Link>
+                                <Link to="/news/u.s. news">ELECTIONS</Link>
                             </li>
                             <li>
-                                <Link to="/">LIFE</Link>
+                                <Link to="/news/life">LIFE</Link>
                             </li>
                             <li>
-                                <Link to="/">PERSONAL</Link>
+                                <Link to="/news/shopping">SHOPPING</Link>
                             </li>
                             <li>
-                                <Link to="/">VIDEO</Link>
+                                <Link to="/news/communities">COMMUNITIES</Link>
                             </li>
                             <li>
-                                <Link to="/">SHOPPING</Link>
+                                <Link to="/news/impact">IMPACT</Link>
                             </li>
                         </ul>
                     </div>
@@ -145,7 +160,7 @@ function Navbar(props) {
                             </Link>
                         </div>
                         <div className="nav-login">
-                            {user.userData && !user.userData.isAuth ? <ul className="nav-links">
+                            {user.userData && !user.userData.isAuth ? <ul className="nav-sign">
                                 <li>
                                     <Link to="/login" >Signin</Link>
                                 </li>
@@ -154,7 +169,7 @@ function Navbar(props) {
                                 </li>
                             </ul>
                                 :
-                                <ul className="nav-links ">
+                                <ul className="nav-sign ">
                                     <li>
                                         <Link to="/uploadpost">Upload</Link>
                                     </li>
@@ -175,7 +190,7 @@ function Navbar(props) {
                             </Link>
                         </div>
                         <div className="nav-login">
-                            {user.userData && !user.userData.isAuth ? <ul className="nav-links">
+                            {user.userData && !user.userData.isAuth ? <ul className="nav-sign">
                                 <li>
                                     <Link to="/login" >Signin</Link>
                                 </li>
@@ -184,7 +199,7 @@ function Navbar(props) {
                                 </li>
                             </ul>
                                 :
-                                <ul className="nav-links ">
+                                <ul className="nav-sign ">
                                     <li>
                                         <Link to="/uploadpost">Upload</Link>
                                     </li>
@@ -197,6 +212,7 @@ function Navbar(props) {
                             style={{ marginLeft: "24px" }}
                             type="button"
                             className="nav-button"
+                            onClick={openNav}
                         >
                             <FaAlignJustify className="nav-icon" />
                         </button>

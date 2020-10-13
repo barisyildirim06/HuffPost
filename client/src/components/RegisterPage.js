@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { registerUser } from "../_actions/user_actions";
 import { useDispatch } from "react-redux";
-
+import './antd.css';
 
 import {
   Form,
@@ -14,23 +14,23 @@ import {
 
 const formItemLayout = {
   labelCol: {
-    xs: { span: 24 },
+    xs: { span: 8 },
     sm: { span: 8 },
   },
   wrapperCol: {
-    xs: { span: 24 },
+    xs: { span: 16 },
     sm: { span: 16 },
   },
 };
 const tailFormItemLayout = {
   wrapperCol: {
     xs: {
-      span: 24,
+      span: 0,
       offset: 0,
     },
     sm: {
-      span: 16,
-      offset: 8,
+      span: 10,
+      offset: 10,
     },
   },
 };
@@ -103,6 +103,7 @@ function RegisterPage(props) {
 
                 <Form.Item required label="Name">
                   <Input
+                  style={{width:"220px", paddingRight:"40px"}}
                     id="name"
                     placeholder="Enter your name"
                     type="text"
@@ -118,8 +119,9 @@ function RegisterPage(props) {
                   )}
                 </Form.Item>
 
-                <Form.Item required label="Last Name">
+                <Form.Item required label="Last Name" >
                   <Input
+                  style={{width:"220px", paddingRight:"40px"}}
                     id="lastName"
                     placeholder="Enter your Last Name"
                     type="text"
@@ -137,6 +139,7 @@ function RegisterPage(props) {
 
                 <Form.Item required label="Email" hasFeedback validateStatus={errors.email && touched.email ? "error" : 'success'}>
                   <Input
+                  style={{width:"220px", paddingRight:"40px"}}
                     id="email"
                     placeholder="Enter your Email"
                     type="email"
@@ -154,6 +157,7 @@ function RegisterPage(props) {
 
                 <Form.Item required label="Password" hasFeedback validateStatus={errors.password && touched.password ? "error" : 'success'}>
                   <Input
+                  style={{width:"220px", paddingRight:"40px"}}
                     id="password"
                     placeholder="Enter your password"
                     type="password"
@@ -171,6 +175,7 @@ function RegisterPage(props) {
 
                 <Form.Item required label="Confirm" hasFeedback>
                   <Input
+                  style={{width:"220px", paddingRight:"40px"}}
                     id="confirmPassword"
                     placeholder="Enter your confirmPassword"
                     type="password"

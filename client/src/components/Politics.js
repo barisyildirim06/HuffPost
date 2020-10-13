@@ -1,8 +1,8 @@
-import React, { Suspense, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import RenderNews from './utils/RenderNews'
 import Title from './Title'
-import Footer from "./Footer"
+
 
 function Politics() {
 

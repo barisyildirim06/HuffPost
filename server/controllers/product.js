@@ -49,15 +49,8 @@ module.exports = {
         let limit = req.body.limit ? parseInt(req.body.limit) : 100; // 
         let skip = parseInt(req.body.skip)
 
-        let findArgs = {};
+        let findArgs = req.body.filters
         let term = req.body.searchTerms;
-
-        console.log(term)
-        // for (let key in req.body.filters) {
-        //     if (req.body.filters[key].length > 0) {
-        //             findArgs[key] = req.body.filters[key]  
-        //     }
-        // }
 
         if(term) {
             Product.find(findArgs)
