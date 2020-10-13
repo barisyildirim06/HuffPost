@@ -1,4 +1,4 @@
-# nexusproject
+# HuffPost Project
 
 ## Project setup
 ```
@@ -23,11 +23,6 @@ npm run dev
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   }
-```
-
-### Main Component
-```
-Necessary code is inside of './src/App.vue' directory
 ```
 
 ### For Questions
