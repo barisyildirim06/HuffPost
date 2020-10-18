@@ -51,6 +51,7 @@ module.exports = {
 
         let findArgs = req.body.filters
         let term = req.body.searchTerms;
+        console.log(term)
 
         if(term) {
             Product.find(findArgs)

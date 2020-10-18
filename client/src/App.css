@@ -186,7 +186,6 @@ h6.thick {
 .nav-links {
   /* height: 0;
     overflow: hidden; */
-    background-color: blue;
   display: flex;
   transition: var(--mainTransition);
   list-style-type: none;

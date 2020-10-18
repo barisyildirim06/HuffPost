@@ -4,7 +4,6 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { registerUser } from "../_actions/user_actions";
 import { useDispatch } from "react-redux";
-import './antd.css';
 
 import {
   Form,
